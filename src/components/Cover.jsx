@@ -1,13 +1,13 @@
 import { weddingData } from "../data/weddingData";
 
-function Cover() {
+function Cover({ onOpenInvitation }) {
   const params = new URLSearchParams(window.location.search);
   const guestName = params.get("to") || "Bapak/Ibu/Saudara/i";
 
   return (
     <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
       <img
-        src="/images/cover.jpg"
+        src="/images/cover.png"
         alt="Wedding Cover"
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -30,12 +30,12 @@ function Cover() {
           <h2 className="text-2xl font-semibold">{guestName}</h2>
         </div>
 
-        <a
-          href="#profil"
+        <button
+          onClick={onOpenInvitation}
           className="inline-block bg-white text-[#3B2F2F] px-8 py-3 rounded-full font-semibold hover:bg-[#EEDFC8] transition"
         >
           Buka Undangan
-        </a>
+        </button>
       </div>
     </section>
   );

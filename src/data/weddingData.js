@@ -3,14 +3,14 @@ export const weddingData = {
     name: "Naruto Uzumaki",
     father: "Minator Namikaze",
     mother: "Kushina Uzumaki",
-    image: "/images/groom.jpg",
+    image: "/images/groom.png",
   },
 
   bride: {
     name: "Hinata Hyuga",
     father: "Hiashi Hyuga",
     mother: "Risa Hyuga",
-    image: "/images/bride.jpg",
+    image: "/images/bride.png",
   },
 
   event: {
@@ -70,9 +70,9 @@ export const weddingData = {
   ],
 
   gallery: [
-    "/images/gallery-1.jpg",
-    "/images/gallery-2.jpg",
-    "/images/gallery-3.jpg",
-    "/images/gallery-4.jpg",
+    "/images/gallery-1.png",
+    "/images/gallery-2.png",
+    "/images/gallery-3.png",
+    "/images/gallery-4.png",
   ],
 };
