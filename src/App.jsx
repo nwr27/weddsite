@@ -1,16 +1,31 @@
+import Cover from "./components/Cover";
+import CoupleProfile from "./components/CoupleProfile";
+import Countdown from "./components/Countdown";
+import EventInfo from "./components/EventInfo";
+import MapsSection from "./components/MapsSection";
+import LoveStory from "./components/LoveStory";
+import Gallery from "./components/Gallery";
+import GiftSection from "./components/GiftSection";
+import RsvpForm from "./components/RsvpForm";
+import GuestBook from "./components/GuestBook";
+import Footer from "./components/Footer";
+
 function App() {
   return (
-    <main className="min-h-screen bg-pink-50 flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-pink-700">
-          Naruto & Hinata
-        </h1>
-        <p className="mt-4 text-gray-700">
-          Wedding Invitation
-        </p>
-      </div>
+    <main className="min-h-screen bg-[#FAF7F2] text-[#3B2F2F]">
+      <Cover />
+      <CoupleProfile />
+      <Countdown />
+      <EventInfo />
+      <MapsSection />
+      <LoveStory />
+      <Gallery />
+      <RsvpForm />
+      <GiftSection />
+      <GuestBook />
+      <Footer />
     </main>
-  )
+  );
 }
 
-export default App
+export default App;
