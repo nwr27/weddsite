@@ -26,21 +26,25 @@ export const weddingData = {
   gifts: [
     {
       type: "BCA",
+      logo: "/icon/bca.png",
       number: "1234567890",
       name: "Naruto Uzumaki",
     },
     {
       type: "CIMB Niaga",
+      logo: "/icon/cimb.png",
       number: "9876543210",
       name: "Hinata Hyuga",
     },
     {
       type: "DANA",
+      logo: "/icon/dana.png",
       number: "081234567890",
       name: "Naruto Uzumaki",
     },
     {
       type: "GoPay",
+      logo: "/icon/gopay.png",
       number: "089876543210",
       name: "Hinata Hyuga",
     },

@@ -28,7 +28,13 @@ function GiftSection() {
       <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {weddingData.gifts.map((gift, index) => (
           <div key={index} className="bg-white rounded-3xl shadow-md p-6">
-            <h3 className="text-2xl font-serif mb-3">{gift.type}</h3>
+            <div className="flex justify-center items-center h-16 mb-4">
+              <img
+                src={gift.logo}
+                alt={gift.type}
+                className="max-h-12 md:max-h-14 object-contain"
+              />
+            </div>
 
             <p className="text-xl font-semibold tracking-wider mb-2">
               {gift.number}
