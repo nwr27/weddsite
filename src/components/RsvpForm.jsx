@@ -33,7 +33,7 @@ function RsvpForm() {
   };
 
   return (
-    <section className="px-6 py-20 max-w-3xl mx-auto">
+    <section className="h-screen px-6 py-6 max-w-3xl mx-auto flex flex-col justify-center">
       <div className="text-center mb-10">
         <p className="uppercase tracking-[0.3em] text-sm text-[#A77C45] mb-3">
           Konfirmasi Kehadiran
@@ -46,7 +46,7 @@ function RsvpForm() {
 
       <form
         onSubmit={handleSubmit}
-        className="bg-white rounded-3xl shadow-md p-6 space-y-5"
+        className="bg-white rounded-3xl shadow-md p-5 space-y-3"
       >
         <div>
           <label className="block mb-2 font-semibold">Nama</label>
@@ -92,7 +92,7 @@ function RsvpForm() {
             name="message"
             value={form.message}
             onChange={handleChange}
-            rows="4"
+            rows="3"
             className="w-full border border-[#D8C7B0] rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#C9A46A]"
             placeholder="Tulis pesan singkat..."
           ></textarea>

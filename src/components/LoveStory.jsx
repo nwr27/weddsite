@@ -2,7 +2,7 @@ import { weddingData } from "../data/weddingData";
 
 function LoveStory() {
   return (
-    <section className="px-6 py-20 max-w-4xl mx-auto">
+    <section className="h-screen px-6 py-8 max-w-4xl mx-auto flex flex-col justify-center">
       <div className="text-center mb-12">
         <p className="uppercase tracking-[0.3em] text-sm text-[#A77C45] mb-3">
           Cerita Kami
@@ -13,11 +13,11 @@ function LoveStory() {
         </h2>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-3">
         {weddingData.loveStory.map((item, index) => (
           <div
             key={index}
-            className="bg-white rounded-3xl shadow-md p-6 border-l-4 border-[#C9A46A]"
+            className="bg-white rounded-2xl shadow-md p-4 border-l-4 border-[#C9A46A]"
           >
             <p className="text-sm text-[#A77C45] font-semibold mb-1">
               {item.year}

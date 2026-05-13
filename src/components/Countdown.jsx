@@ -35,7 +35,7 @@ function Countdown() {
   }, []);
 
   return (
-    <section className="px-6 py-16 bg-[#EFE3D0] text-center">
+    <section className="h-screen px-6 py-10 bg-[#EFE3D0] text-center flex flex-col justify-center">
       <p className="uppercase tracking-[0.3em] text-sm text-[#A77C45] mb-3">
         Menuju Hari Bahagia
       </p>

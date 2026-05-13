@@ -2,7 +2,7 @@ import { weddingData } from "../data/weddingData";
 
 function Gallery() {
   return (
-    <section className="px-6 py-20 bg-[#EFE3D0]">
+    <section className="h-screen px-6 py-8 bg-[#EFE3D0] flex flex-col justify-center">
       <div className="text-center mb-12">
         <p className="uppercase tracking-[0.3em] text-sm text-[#A77C45] mb-3">
           Galeri
@@ -22,7 +22,7 @@ function Gallery() {
             <img
               src={image}
               alt={`Gallery ${index + 1}`}
-              className="w-full h-56 md:h-72 object-cover hover:scale-105 transition duration-500"
+              className="w-full h-36 md:h-72 object-cover hover:scale-105 transition duration-500"
             />
           </div>
         ))}

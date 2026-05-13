@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Cover from "./components/Cover";
 import CoupleProfile from "./components/CoupleProfile";
@@ -13,51 +13,213 @@ import GuestBook from "./components/GuestBook";
 import Footer from "./components/Footer";
 
 function App() {
-  const [isOpened, setIsOpened] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isCoverOpened, setIsCoverOpened] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const totalSlides = 11;
 
   useEffect(() => {
-    if (!isOpened) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = "hidden";
 
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [isOpened]);
+  }, []);
 
-  const handleOpenInvitation = () => {
-    setIsOpened(true);
+  const goToSlide = (targetSlide) => {
+    if (isAnimating) return;
+
+    if (targetSlide < 0 || targetSlide >= totalSlides) return;
+
+    setIsAnimating(true);
+    setCurrentSlide(targetSlide);
+
+    // Kalau balik ke cover, cover ditutup lagi
+    if (targetSlide === 0) {
+      setIsCoverOpened(false);
+    }
 
     setTimeout(() => {
-      const target = document.getElementById("profil");
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
+      setIsAnimating(false);
+    }, 1100);
+  };
+
+  const nextSlide = () => {
+    if (currentSlide === 0 && !isCoverOpened) return;
+    goToSlide(currentSlide + 1);
+  };
+
+  const prevSlide = () => {
+    goToSlide(currentSlide - 1);
+  };
+
+  const handleOpenInvitation = () => {
+    if (isAnimating) return;
+
+    setIsAnimating(true);
+    setIsCoverOpened(true);
+
+    // Tunggu efek cover terbelah, lalu pindah ke slide profil
+    setTimeout(() => {
+      setCurrentSlide(1);
+    }, 900);
+
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1500);
+  };
+
+  const handleWheel = (event) => {
+    if (isAnimating) return;
+
+    if (event.deltaY > 80) {
+      nextSlide();
+    }
+
+    if (event.deltaY < -80) {
+      prevSlide();
+    }
+  };
+
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0].clientX;
+    touchStartY.current = event.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (event) => {
+    if (isAnimating) return;
+
+    const touchEndX = event.changedTouches[0].clientX;
+    const touchEndY = event.changedTouches[0].clientY;
+
+    const diffX = touchStartX.current - touchEndX;
+    const diffY = touchStartY.current - touchEndY;
+
+    const minSwipeDistance = 50;
+
+    const isHorizontalSwipe = Math.abs(diffX) > Math.abs(diffY);
+    const isVerticalSwipe = Math.abs(diffY) > Math.abs(diffX);
+
+    if (isVerticalSwipe && Math.abs(diffY) > minSwipeDistance) {
+      if (diffY > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
       }
-    }, 100);
+    }
+
+    if (isHorizontalSwipe && Math.abs(diffX) > minSwipeDistance) {
+      if (diffX > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
   };
 
   return (
-    <main className="min-h-screen bg-[#FAF7F2] text-[#3B2F2F]">
-      <Cover onOpenInvitation={handleOpenInvitation} />
-
+    <main
+      className="h-screen w-screen overflow-hidden bg-[#FAF7F2] text-[#3B2F2F]"
+      onWheel={handleWheel}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       <div
-        className={`transition-opacity duration-700 ${isOpened ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
+        className="h-full w-full transition-transform duration-1000 ease-in-out"
+        style={{
+          transform: `translateY(-${currentSlide * 100}vh)`,
+        }}
       >
-        <CoupleProfile />
-        <Countdown />
-        <EventInfo />
-        <MapsSection />
-        <LoveStory />
-        <Gallery />
-        <RsvpForm />
-        <GiftSection />
-        <GuestBook />
-        <Footer />
+        <Slide>
+          <Cover
+            isOpened={isCoverOpened}
+            onOpenInvitation={handleOpenInvitation}
+          />
+        </Slide>
+
+        <Slide>
+          <CoupleProfile />
+        </Slide>
+
+        <Slide>
+          <Countdown />
+        </Slide>
+
+        <Slide>
+          <EventInfo />
+        </Slide>
+
+        <Slide>
+          <MapsSection />
+        </Slide>
+
+        <Slide>
+          <LoveStory />
+        </Slide>
+
+        <Slide>
+          <Gallery />
+        </Slide>
+
+        <Slide>
+          <RsvpForm />
+        </Slide>
+
+        <Slide>
+          <GiftSection />
+        </Slide>
+
+        <Slide>
+          <GuestBook />
+        </Slide>
+
+        <Slide>
+          <Footer />
+        </Slide>
       </div>
+
+      {currentSlide > 0 && (
+        <SlideIndicator currentSlide={currentSlide} totalSlides={totalSlides} />
+      )}
+      <SlideHint currentSlide={currentSlide} />
     </main>
+  );
+}
+
+function Slide({ children }) {
+  return (
+    <section className="h-screen w-screen overflow-hidden">
+      {children}
+    </section>
+  );
+}
+
+function SlideIndicator({ currentSlide, totalSlides }) {
+  return (
+    <div className="fixed right-4 top-1/2 z-[60] hidden -translate-y-1/2 flex-col gap-2 md:flex">
+      {Array.from({ length: totalSlides }).map((_, index) => (
+        <div
+          key={index}
+          className={`h-2 w-2 rounded-full transition-all ${currentSlide === index
+              ? "h-6 bg-[#3B2F2F]"
+              : "bg-[#3B2F2F]/30"
+            }`}
+        />
+      ))}
+    </div>
+  );
+}
+
+function SlideHint({ currentSlide }) {
+  if (currentSlide === 0) return null;
+
+  return (
+    <div className="fixed bottom-5 left-1/2 z-[60] -translate-x-1/2 text-center text-xs text-[#3B2F2F]/60">
+      <p>Scroll / swipe untuk pindah slide</p>
+    </div>
   );
 }
 

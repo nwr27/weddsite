@@ -4,7 +4,7 @@ function CoupleProfile() {
   const { groom, bride } = weddingData;
 
   return (
-    <section id="profil" className="px-6 py-20 max-w-5xl mx-auto text-center">
+    <section id="profil" className="h-screen px-6 py-10 max-w-5xl mx-auto text-center flex flex-col justify-center">
       <p className="text-sm uppercase tracking-[0.3em] text-[#A77C45] mb-3">
         Assalamu'alaikum Warahmatullahi Wabarakatuh
       </p>
@@ -23,7 +23,7 @@ function CoupleProfile() {
           <img
             src={groom.image}
             alt={groom.name}
-            className="w-48 h-48 object-cover rounded-full mx-auto mb-6 border-4 border-[#E8D6B8]"
+            className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-full mx-auto mb-4 border-4 border-[#E8D6B8]"
           />
 
           <h3 className="text-3xl font-serif mb-3">{groom.name}</h3>
@@ -39,7 +39,7 @@ function CoupleProfile() {
           <img
             src={bride.image}
             alt={bride.name}
-            className="w-48 h-48 object-cover rounded-full mx-auto mb-6 border-4 border-[#E8D6B8]"
+            className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-full mx-auto mb-4 border-4 border-[#E8D6B8]"
           />
 
           <h3 className="text-3xl font-serif mb-3">{bride.name}</h3>

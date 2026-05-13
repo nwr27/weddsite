@@ -1,41 +1,88 @@
 import { weddingData } from "../data/weddingData";
 
-function Cover({ onOpenInvitation }) {
+function Cover({ isOpened, onOpenInvitation }) {
   const params = new URLSearchParams(window.location.search);
   const guestName = params.get("to") || "Bapak/Ibu/Saudara/i";
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
-      <img
-        src="/images/cover.png"
-        alt="Wedding Cover"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+    <section className="relative h-screen w-screen overflow-hidden bg-black">
+      {/* Sisi kiri gambar cover */}
+      <div
+        className={`absolute left-0 top-0 h-full w-1/2 overflow-hidden transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "-translate-x-full" : "translate-x-0"
+          }`}
+      >
+        <img
+          src="/images/cover.png"
+          alt="Wedding Cover Left"
+          className="absolute left-0 top-0 h-full w-[200%] object-cover"
+        />
+      </div>
 
-      <div className="absolute inset-0 bg-black/45"></div>
+      {/* Sisi kanan gambar cover */}
+      <div
+        className={`absolute right-0 top-0 h-full w-1/2 overflow-hidden transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "translate-x-full" : "translate-x-0"
+          }`}
+      >
+        <img
+          src="/images/cover.png"
+          alt="Wedding Cover Right"
+          className="absolute right-0 top-0 h-full w-[200%] object-cover"
+        />
+      </div>
 
-      <div className="relative z-10 px-6 text-white max-w-xl">
-        <p className="tracking-[0.3em] uppercase text-sm mb-4">
-          The Wedding of
-        </p>
+      {/* Overlay gelap kiri */}
+      <div
+        className={`pointer-events-none absolute left-0 top-0 h-full w-1/2 bg-black/45 transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "-translate-x-full" : "translate-x-0"
+          }`}
+      ></div>
 
-        <h1 className="text-5xl md:text-7xl font-serif mb-4">
-          Naruto & Hinata
-        </h1>
+      {/* Overlay gelap kanan */}
+      <div
+        className={`pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-black/45 transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "translate-x-full" : "translate-x-0"
+          }`}
+      ></div>
 
-        <p className="text-lg mb-8">{weddingData.event.dateText}</p>
+      {/* Garis belahan tengah */}
+      <div
+        className={`absolute left-1/2 top-0 z-20 h-full w-[2px] -translate-x-1/2 bg-white/40 transition-opacity duration-500 ${isOpened ? "opacity-0" : "opacity-100"
+          }`}
+      ></div>
 
-        <div className="bg-white/15 backdrop-blur-md rounded-2xl p-5 mb-8">
-          <p className="text-sm mb-1">Kepada Yth.</p>
-          <h2 className="text-2xl font-semibold">{guestName}</h2>
+      {/* Isi cover */}
+      <div
+        className={`relative z-30 flex h-screen items-center justify-center px-6 text-center text-white transition-all duration-700 ${isOpened
+            ? "translate-y-8 scale-95 opacity-0"
+            : "translate-y-0 scale-100 opacity-100"
+          }`}
+      >
+        <div className="max-w-xl">
+          <p className="mb-4 text-sm uppercase tracking-[0.3em]">
+            The Wedding of
+          </p>
+
+          <h1 className="mb-4 font-serif text-5xl md:text-7xl">
+            Naruto & Hinata
+          </h1>
+
+          <p className="mb-8 text-lg">{weddingData.event.dateText}</p>
+
+          <div className="mb-8 rounded-2xl bg-white/15 p-5 backdrop-blur-md">
+            <p className="mb-1 text-sm">Kepada Yth.</p>
+            <h2 className="text-2xl font-semibold">{guestName}</h2>
+          </div>
+
+          <button
+            onClick={onOpenInvitation}
+            disabled={isOpened}
+            className="inline-block rounded-full bg-white px-8 py-3 font-semibold text-[#3B2F2F] transition hover:bg-[#EEDFC8] disabled:opacity-60"
+          >
+            Buka Undangan
+          </button>
+
+          <p className="mt-6 text-sm text-white/80">
+            Klik tombol untuk membuka undangan
+          </p>
         </div>
-
-        <button
-          onClick={onOpenInvitation}
-          className="inline-block bg-white text-[#3B2F2F] px-8 py-3 rounded-full font-semibold hover:bg-[#EEDFC8] transition"
-        >
-          Buka Undangan
-        </button>
       </div>
     </section>
   );

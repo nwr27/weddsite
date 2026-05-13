@@ -4,7 +4,7 @@ function EventInfo() {
   const { event } = weddingData;
 
   return (
-    <section className="px-6 py-20 max-w-5xl mx-auto text-center">
+    <section className="h-screen px-6 py-10 max-w-5xl mx-auto text-center flex flex-col justify-center">
       <p className="uppercase tracking-[0.3em] text-sm text-[#A77C45] mb-3">
         Detail Acara
       </p>

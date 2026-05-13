@@ -43,7 +43,7 @@ function GuestBook() {
   };
 
   return (
-    <section className="px-6 py-20 max-w-4xl mx-auto">
+    <section className="h-screen px-6 py-6 max-w-4xl mx-auto flex flex-col justify-center">
       <div className="text-center mb-10">
         <p className="uppercase tracking-[0.3em] text-sm text-[#A77C45] mb-3">
           Doa & Ucapan
@@ -92,7 +92,7 @@ function GuestBook() {
         </button>
       </form>
 
-      <div className="space-y-4">
+      <div className="space-y-3 max-h-56 overflow-hidden">
         {messages.map((item, index) => (
           <div key={index} className="bg-white rounded-2xl shadow p-5">
             <h3 className="font-semibold mb-2">{item.name}</h3>
