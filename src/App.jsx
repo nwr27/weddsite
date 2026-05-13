@@ -14,12 +14,14 @@ import Footer from "./components/Footer";
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showCover, setShowCover] = useState(true);
   const [isCoverOpened, setIsCoverOpened] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
-  const totalSlides = 11;
+
+  const totalSlides = 10;
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -31,24 +33,24 @@ function App() {
 
   const goToSlide = (targetSlide) => {
     if (isAnimating) return;
+    if (showCover) return;
 
-    if (targetSlide < 0 || targetSlide >= totalSlides) return;
+    if (targetSlide < 0) {
+      backToCover();
+      return;
+    }
+
+    if (targetSlide >= totalSlides) return;
 
     setIsAnimating(true);
     setCurrentSlide(targetSlide);
 
-    // Kalau balik ke cover, cover ditutup lagi
-    if (targetSlide === 0) {
-      setIsCoverOpened(false);
-    }
-
     setTimeout(() => {
       setIsAnimating(false);
-    }, 1100);
+    }, 850);
   };
 
   const nextSlide = () => {
-    if (currentSlide === 0 && !isCoverOpened) return;
     goToSlide(currentSlide + 1);
   };
 
@@ -62,18 +64,29 @@ function App() {
     setIsAnimating(true);
     setIsCoverOpened(true);
 
-    // Tunggu efek cover terbelah, lalu pindah ke slide profil
+    // Cover terbelah, lalu hilang.
+    // Slide profil sudah ada di belakang cover.
     setTimeout(() => {
-      setCurrentSlide(1);
-    }, 900);
+      setShowCover(false);
+      setIsAnimating(false);
+    }, 1400);
+  };
+
+  const backToCover = () => {
+    if (isAnimating) return;
+
+    setIsAnimating(true);
+    setCurrentSlide(0);
+    setShowCover(true);
+    setIsCoverOpened(false);
 
     setTimeout(() => {
       setIsAnimating(false);
-    }, 1500);
+    }, 500);
   };
 
   const handleWheel = (event) => {
-    if (isAnimating) return;
+    if (isAnimating || showCover) return;
 
     if (event.deltaY > 80) {
       nextSlide();
@@ -90,7 +103,7 @@ function App() {
   };
 
   const handleTouchEnd = (event) => {
-    if (isAnimating) return;
+    if (isAnimating || showCover) return;
 
     const touchEndX = event.changedTouches[0].clientX;
     const touchEndY = event.changedTouches[0].clientY;
@@ -98,11 +111,12 @@ function App() {
     const diffX = touchStartX.current - touchEndX;
     const diffY = touchStartY.current - touchEndY;
 
-    const minSwipeDistance = 50;
+    const minSwipeDistance = 45;
 
     const isHorizontalSwipe = Math.abs(diffX) > Math.abs(diffY);
     const isVerticalSwipe = Math.abs(diffY) > Math.abs(diffX);
 
+    // HP swipe atas / bawah
     if (isVerticalSwipe && Math.abs(diffY) > minSwipeDistance) {
       if (diffY > 0) {
         nextSlide();
@@ -111,6 +125,7 @@ function App() {
       }
     }
 
+    // HP swipe kiri / kanan
     if (isHorizontalSwipe && Math.abs(diffX) > minSwipeDistance) {
       if (diffX > 0) {
         nextSlide();
@@ -122,24 +137,17 @@ function App() {
 
   return (
     <main
-      className="h-screen w-screen overflow-hidden bg-[#FAF7F2] text-[#3B2F2F]"
+      className="relative h-screen w-screen overflow-hidden bg-[#FAF7F2] text-[#3B2F2F]"
       onWheel={handleWheel}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
       <div
-        className="h-full w-full transition-transform duration-1000 ease-in-out"
+        className="h-full w-full transition-transform duration-700 ease-in-out"
         style={{
           transform: `translateY(-${currentSlide * 100}vh)`,
         }}
       >
-        <Slide>
-          <Cover
-            isOpened={isCoverOpened}
-            onOpenInvitation={handleOpenInvitation}
-          />
-        </Slide>
-
         <Slide>
           <CoupleProfile />
         </Slide>
@@ -181,20 +189,28 @@ function App() {
         </Slide>
       </div>
 
-      {currentSlide > 0 && (
-        <SlideIndicator currentSlide={currentSlide} totalSlides={totalSlides} />
+      {showCover && (
+        <Cover
+          isOpened={isCoverOpened}
+          onOpenInvitation={handleOpenInvitation}
+        />
       )}
-      <SlideHint currentSlide={currentSlide} />
+
+      {!showCover && (
+        <>
+          <SlideIndicator
+            currentSlide={currentSlide}
+            totalSlides={totalSlides}
+          />
+          <SlideHint />
+        </>
+      )}
     </main>
   );
 }
 
 function Slide({ children }) {
-  return (
-    <section className="h-screen w-screen overflow-hidden">
-      {children}
-    </section>
-  );
+  return <section className="h-screen w-screen overflow-hidden">{children}</section>;
 }
 
 function SlideIndicator({ currentSlide, totalSlides }) {
@@ -213,11 +229,9 @@ function SlideIndicator({ currentSlide, totalSlides }) {
   );
 }
 
-function SlideHint({ currentSlide }) {
-  if (currentSlide === 0) return null;
-
+function SlideHint() {
   return (
-    <div className="fixed bottom-5 left-1/2 z-[60] -translate-x-1/2 text-center text-xs text-[#3B2F2F]/60">
+    <div className="pointer-events-none fixed bottom-5 left-1/2 z-[60] -translate-x-1/2 text-center text-xs text-[#3B2F2F]/60">
       <p>Scroll / swipe untuk pindah slide</p>
     </div>
   );

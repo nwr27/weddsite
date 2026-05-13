@@ -19,7 +19,7 @@ function MapsSection() {
         href={event.mapsUrl}
         target="_blank"
         rel="noreferrer"
-        className="inline-block bg-[#3B2F2F] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#5A463C] transition"
+        className="mx-auto inline-flex w-fit items-center justify-center rounded-full bg-[#3B2F2F] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#5A463C] md:px-8 md:text-base"
       >
         Buka Google Maps
       </a>

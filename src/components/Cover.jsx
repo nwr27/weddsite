@@ -5,7 +5,7 @@ function Cover({ isOpened, onOpenInvitation }) {
   const guestName = params.get("to") || "Bapak/Ibu/Saudara/i";
 
   return (
-    <section className="relative h-screen w-screen overflow-hidden bg-black">
+    <section className="fixed inset-0 z-[100] h-screen w-screen overflow-hidden bg-transparent">
       {/* Sisi kiri gambar cover */}
       <div
         className={`absolute left-0 top-0 h-full w-1/2 overflow-hidden transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "-translate-x-full" : "translate-x-0"
@@ -34,19 +34,19 @@ function Cover({ isOpened, onOpenInvitation }) {
       <div
         className={`pointer-events-none absolute left-0 top-0 h-full w-1/2 bg-black/45 transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "-translate-x-full" : "translate-x-0"
           }`}
-      ></div>
+      />
 
       {/* Overlay gelap kanan */}
       <div
         className={`pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-black/45 transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "translate-x-full" : "translate-x-0"
           }`}
-      ></div>
+      />
 
       {/* Garis belahan tengah */}
       <div
         className={`absolute left-1/2 top-0 z-20 h-full w-[2px] -translate-x-1/2 bg-white/40 transition-opacity duration-500 ${isOpened ? "opacity-0" : "opacity-100"
           }`}
-      ></div>
+      />
 
       {/* Isi cover */}
       <div
