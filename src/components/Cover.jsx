@@ -4,49 +4,76 @@ function Cover({ isOpened, onOpenInvitation }) {
   const params = new URLSearchParams(window.location.search);
   const guestName = params.get("to") || "Bapak/Ibu/Saudara/i";
 
+  const coverImage = "/images/cover.png";
+
   return (
     <section className="fixed inset-0 z-[100] h-screen w-screen overflow-hidden bg-transparent">
-      {/* Sisi kiri gambar cover */}
+      {/* POTONGAN KIRI - sudah siap di bawah gambar utuh */}
       <div
-        className={`absolute left-0 top-0 h-full w-1/2 overflow-hidden transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "-translate-x-full" : "translate-x-0"
+        className={`absolute left-0 top-0 z-10 h-full w-[50.7vw] overflow-hidden transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "-translate-x-full" : "translate-x-0"
           }`}
       >
         <img
-          src="/images/cover.png"
+          src={coverImage}
           alt="Wedding Cover Left"
-          className="absolute left-0 top-0 h-full w-[200%] object-cover"
+          className="absolute left-0 top-0 h-screen w-screen max-w-none object-cover"
         />
+
+        <div className="absolute inset-0 bg-black/35" />
       </div>
 
-      {/* Sisi kanan gambar cover */}
+      {/* POTONGAN KANAN - sudah siap di bawah gambar utuh */}
       <div
-        className={`absolute right-0 top-0 h-full w-1/2 overflow-hidden transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "translate-x-full" : "translate-x-0"
+        className={`absolute right-0 top-0 z-10 h-full w-[50.7vw] overflow-hidden transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "translate-x-full" : "translate-x-0"
           }`}
       >
         <img
-          src="/images/cover.png"
+          src={coverImage}
           alt="Wedding Cover Right"
-          className="absolute right-0 top-0 h-full w-[200%] object-cover"
+          className="absolute right-0 top-0 h-screen w-screen max-w-none object-cover"
         />
+
+        <div className="absolute inset-0 bg-black/35" />
       </div>
 
-      {/* Overlay gelap kiri */}
-      <div
-        className={`pointer-events-none absolute left-0 top-0 h-full w-1/2 bg-black/45 transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "-translate-x-full" : "translate-x-0"
+      {/* 1 GAMBAR UTUH - hanya untuk tampilan awal agar tidak terlihat sambungan */}
+      <img
+        src={coverImage}
+        alt="Wedding Cover"
+        className={`absolute inset-0 z-20 h-full w-full object-cover ${isOpened ? "opacity-0" : "opacity-100"
           }`}
       />
 
-      {/* Overlay gelap kanan */}
+      {/* Overlay gambar utuh */}
       <div
-        className={`pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-black/45 transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.175,1)] ${isOpened ? "translate-x-full" : "translate-x-0"
+        className={`absolute inset-0 z-20 bg-black/35 ${isOpened ? "opacity-0" : "opacity-100"
           }`}
       />
 
-      {/* Garis belahan tengah */}
-      <div
-        className={`absolute left-1/2 top-0 z-20 h-full w-[2px] -translate-x-1/2 bg-white/40 transition-opacity duration-500 ${isOpened ? "opacity-0" : "opacity-100"
-          }`}
-      />
+      {/* Efek magical reveal saat cover terbuka */}
+      {isOpened && (
+        <div className="pointer-events-none absolute inset-0 z-[60] reveal-effect">
+          <div className="reveal-flash" />
+          <div className="reveal-glow" />
+          <div className="reveal-line" />
+
+          <div className="reveal-mist mist-1" />
+          <div className="reveal-mist mist-2" />
+          <div className="reveal-mist mist-3" />
+          <div className="reveal-mist mist-4" />
+
+          <div className="sparkle sparkle-1" />
+          <div className="sparkle sparkle-2" />
+          <div className="sparkle sparkle-3" />
+          <div className="sparkle sparkle-4" />
+          <div className="sparkle sparkle-5" />
+          <div className="sparkle sparkle-6" />
+          <div className="sparkle sparkle-7" />
+          <div className="sparkle sparkle-8" />
+          <div className="sparkle sparkle-9" />
+          <div className="sparkle sparkle-10" />
+        </div>
+      )}
 
       {/* Isi cover */}
       <div
@@ -57,11 +84,11 @@ function Cover({ isOpened, onOpenInvitation }) {
       >
         <div className="max-w-xl">
           <p className="mb-4 text-sm uppercase tracking-[0.3em]">
-            The Wedding of
+            This is For You
           </p>
 
           <h1 className="mb-4 font-serif text-5xl md:text-7xl">
-            Naruto & Hinata
+            Wedding Invitation
           </h1>
 
           <p className="mb-8 text-lg">{weddingData.event.dateText}</p>

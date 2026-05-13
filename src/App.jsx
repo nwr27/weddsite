@@ -144,7 +144,7 @@ function App() {
     setTimeout(() => {
       setShowCover(false);
       setIsAnimating(false);
-    }, 1400);
+    }, 2000);
   };
 
   const handleWheel = (event) => {
