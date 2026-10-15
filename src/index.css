@@ -480,3 +480,904 @@ body {
     transform: translate(330px, -20px) scale(1) rotate(230deg);
   }
 }
+
+/* WEDDSITE: compact single-viewport slides across phone, tablet, desktop */
+html,
+body,
+#root {
+  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body {
+  touch-action: pan-x pan-y;
+}
+
+.wedd-slide {
+  height: 100dvh;
+}
+
+.wedd-slide-content>section,
+.wedd-slide-content>footer {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none;
+  padding-top: clamp(8px, 1.8vh, 22px) !important;
+  padding-bottom: clamp(8px, 1.8vh, 22px) !important;
+}
+
+.wedd-slide-content h2 {
+  margin-bottom: clamp(8px, 1.6vh, 20px) !important;
+  font-size: clamp(1.35rem, 3.3vh, 2.2rem) !important;
+}
+
+.wedd-slide-content h3 {
+  font-size: clamp(1.1rem, 2.6vh, 1.75rem) !important;
+}
+
+.wedd-slide-content p {
+  line-height: 1.35;
+}
+
+.wedd-slide-content .mb-14,
+.wedd-slide-content .mb-12,
+.wedd-slide-content .mb-10,
+.wedd-slide-content .mb-8,
+.wedd-slide-content .mb-6 {
+  margin-bottom: clamp(5px, 1.4vh, 15px) !important;
+}
+
+.wedd-slide-content .mt-10 {
+  margin-top: clamp(6px, 1.5vh, 16px) !important;
+}
+
+.wedd-slide-content .gap-10,
+.wedd-slide-content .gap-8,
+.wedd-slide-content .gap-6 {
+  gap: clamp(6px, 1.4vh, 18px) !important;
+}
+
+.wedd-slide-content .space-y-5> :not([hidden])~ :not([hidden]) {
+  margin-top: 8px !important;
+}
+
+.wedd-slide-content .p-8,
+.wedd-slide-content .p-6,
+.wedd-slide-content .p-5 {
+  padding: clamp(8px, 1.5vh, 18px) !important;
+}
+
+.wedd-slide-content input,
+.wedd-slide-content textarea,
+.wedd-slide-content select {
+  padding: 7px 10px !important;
+  font-size: 16px;
+}
+
+.wedd-slide-content textarea {
+  min-height: 38px;
+  max-height: 56px;
+}
+
+.wedd-slide-content img {
+  max-height: min(22vh, 190px);
+}
+
+.wedd-slide-content .max-h-56 {
+  max-height: min(14vh, 110px) !important;
+}
+
+@media (max-width: 767px) {
+  .wedd-slide-content .grid.md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wedd-slide-content .grid.md\:grid-cols-2>* {
+    min-width: 0;
+  }
+
+  .wedd-slide-content .grid.md\:grid-cols-2 img {
+    width: clamp(55px, 10vh, 90px);
+    height: clamp(55px, 10vh, 90px);
+  }
+
+  .wedd-slide-content .grid.md\:grid-cols-2 h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .wedd-slide-content .grid.grid-cols-2 {
+    gap: 8px;
+  }
+
+  .wedd-slide-content .grid.grid-cols-4 {
+    gap: 5px;
+  }
+
+  .wedd-slide-content .grid.grid-cols-4>* {
+    padding: 8px !important;
+  }
+
+  .wedd-slide-content .text-\[22px\] {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  .wedd-slide-content .leading-\[2\.2\] {
+    line-height: 1.5 !important;
+  }
+
+  .wedd-slide-content .px-6 {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .wedd-slide-content .text-sm {
+    font-size: 12px;
+  }
+
+  .wedd-slide-content .text-lg {
+    font-size: 14px;
+  }
+
+  .wedd-slide-content .rounded-3xl {
+    border-radius: 16px;
+  }
+
+  .wedd-slide-content .space-y-3> :not([hidden])~ :not([hidden]) {
+    margin-top: 7px !important;
+  }
+
+  .wedd-slide-content .w-32.h-32 {
+    width: 68px;
+    height: 68px;
+  }
+
+  .wedd-slide-content .h-36 {
+    height: min(16vh, 115px);
+  }
+}
+
+@media (max-height: 650px) {
+  .wedd-slide-content .text-3xl {
+    font-size: 1.25rem;
+  }
+
+  .wedd-slide-content .py-10,
+  .wedd-slide-content .py-8 {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+  }
+}
+
+/* Couple Profile & Qur'an — mobile-first Golden Langsat */
+.cp-page,
+.qv-page {
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #4c3b2c;
+  background: radial-gradient(ellipse at 85% 8%, #f7e6a9 0, transparent 43%), radial-gradient(ellipse at 3% 95%, #f4dc97 0, transparent 42%), #fffaf0;
+  font-family: inherit
+}
+
+.cp-shell {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 850px);
+  height: 100%;
+  padding: clamp(28px, 5.5dvh, 54px) 18px clamp(30px, 6dvh, 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(12px, 2.5dvh, 24px)
+}
+
+.cp-halo {
+  position: absolute;
+  border: 1px solid #d9ae57;
+  opacity: .25;
+  border-radius: 50%;
+  pointer-events: none
+}
+
+.cp-halo-one {
+  width: 260px;
+  height: 260px;
+  top: -165px;
+  right: -95px
+}
+
+.cp-halo-two {
+  width: 210px;
+  height: 210px;
+  bottom: -145px;
+  left: -90px
+}
+
+.cp-header {
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto
+}
+
+.cp-eyebrow {
+  font-size: clamp(11px, 1.6dvh, 15px);
+  color: #ac8138
+}
+
+.cp-salam {
+  font-size: clamp(10px, 1.55dvh, 13px);
+  letter-spacing: .09em;
+  color: #96733d;
+  margin: 5px 0
+}
+
+.cp-header h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(22px, 3.6dvh, 35px);
+  font-weight: 400;
+  line-height: 1.12;
+  margin: 5px 0;
+  color: #654727
+}
+
+.cp-intro {
+  font-size: clamp(11px, 1.7dvh, 14px);
+  line-height: 1.45;
+  color: #756553;
+  margin: 6px auto 0;
+  max-width: 380px
+}
+
+.cp-couple {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  position: relative;
+  align-items: stretch
+}
+
+.cp-person {
+  min-width: 0;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .82);
+  border: 1px solid #f0dba7;
+  box-shadow: 0 8px 24px #a37a3420;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(10px, 1.9dvh, 18px) 9px clamp(12px, 2dvh, 18px);
+  text-align: center;
+  position: relative
+}
+
+.cp-person-2 {
+  background: linear-gradient(160deg, #fffdf7, #fff2cf)
+}
+
+.cp-photo-wrap {
+  width: clamp(60px, 11dvh, 104px);
+  height: clamp(60px, 11dvh, 104px);
+  border: 3px solid #ebc978;
+  border-radius: 50%;
+  padding: 3px;
+  background: white;
+  margin-bottom: clamp(8px, 1.5dvh, 13px)
+}
+
+.cp-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  max-height: none !important
+}
+
+.cp-person-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(5px, 1dvh, 9px);
+  min-width: 0;
+  width: 100%
+}
+
+.cp-person-label {
+  font-size: clamp(8px, 1.15dvh, 10px);
+  letter-spacing: .12em;
+  color: #b08a4d
+}
+
+.cp-person h3 {
+  font-family: Georgia, serif;
+  font-size: clamp(15px, 2.4dvh, 24px);
+  line-height: 1.13;
+  font-weight: 500;
+  color: #543e2c;
+  overflow-wrap: break-word
+}
+
+.cp-parent {
+  font-size: clamp(10px, 1.5dvh, 13px);
+  line-height: 1.35;
+  color: #6e5c4c
+}
+
+.cp-parent strong {
+  font-weight: 600;
+  color: #604a34
+}
+
+.cp-address {
+  margin-top: 4px;
+  padding-top: clamp(7px, 1.1dvh, 11px);
+  border-top: 1px solid #eed9aa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #806a4e;
+  font-size: clamp(9px, 1.3dvh, 11px);
+  line-height: 1.35
+}
+
+.cp-pin {
+  color: #c49a4a;
+  font-size: 13px
+}
+
+.cp-amp {
+  position: absolute;
+  z-index: 2;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #d3a74d;
+  border: 3px solid #fffaf0;
+  color: white;
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+  display: grid;
+  place-items: center;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 21px;
+  box-shadow: 0 3px 10px #8d6d3440
+}
+
+.cp-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 10px;
+  letter-spacing: .24em;
+  color: #a17b43
+}
+
+.cp-line {
+  height: 1px;
+  background: #dcbf80;
+  width: clamp(25px, 10vw, 85px)
+}
+
+.cp-bottom-amp {
+  color: #bd8f3e
+}
+
+.qv-page {
+  background: radial-gradient(ellipse at 50% 0, #f9e8b9, transparent 52%), #fffaf1
+}
+
+.qv-shell {
+  width: min(100% - 38px, 700px);
+  max-height: 94dvh;
+  text-align: center;
+  border: 1px solid #e9d4a2;
+  border-radius: 28px;
+  padding: clamp(18px, 3.5dvh, 40px) clamp(15px, 4vw, 45px);
+  background: #ffffffb8;
+  box-shadow: 0 12px 40px #9f783019;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 1.8dvh, 17px)
+}
+
+.qv-star {
+  color: #c69a45;
+  font-size: 21px
+}
+
+.qv-kicker {
+  letter-spacing: .24em;
+  color: #ac8343;
+  font-size: 9px
+}
+
+.qv-shell h2 {
+  font: 400 clamp(23px, 4dvh, 38px) Georgia, serif;
+  color: #5c452c
+}
+
+.qv-ref {
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: #9c783e
+}
+
+.qv-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #c49b51;
+  font-size: 11px;
+  width: 60%;
+  justify-content: center
+}
+
+.qv-divider span {
+  height: 1px;
+  background: #dec48d;
+  flex: 1
+}
+
+.qv-arab {
+  font-family: serif;
+  font-size: clamp(18px, 3.4dvh, 31px);
+  line-height: 1.95;
+  color: #4b3928
+}
+
+.qv-translation {
+  font-size: clamp(10px, 1.65dvh, 14px);
+  line-height: 1.65;
+  font-style: italic;
+  color: #71604c
+}
+
+.qv-signature {
+  font: italic 18px Georgia, serif;
+  color: #b18b4d
+}
+
+@media(min-width:768px) {
+  .cp-shell {
+    padding-left: 45px;
+    padding-right: 45px
+  }
+
+  .cp-couple {
+    gap: 30px
+  }
+
+  .cp-person {
+    flex-direction: row;
+    text-align: left;
+    gap: 20px;
+    padding: 24px;
+    align-items: center
+  }
+
+  .cp-person-body {
+    align-items: flex-start
+  }
+
+  .cp-address {
+    align-items: flex-start
+  }
+
+  .cp-photo-wrap {
+    flex-shrink: 0;
+    margin: 0;
+    width: 110px;
+    height: 110px
+  }
+
+  .cp-amp {
+    top: 50%
+  }
+}
+
+@media(max-height:610px) {
+  .cp-shell {
+    gap: 7px;
+    padding-top: 10px;
+    padding-bottom: 16px
+  }
+
+  .cp-person {
+    padding: 8px
+  }
+
+  .cp-photo-wrap {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 4px
+  }
+
+  .cp-person-body {
+    gap: 3px
+  }
+
+  .cp-header h2 {
+    font-size: 20px
+  }
+
+  .cp-intro {
+    font-size: 10px
+  }
+
+  .cp-address {
+    padding-top: 4px;
+    margin-top: 0
+  }
+
+  .qv-shell {
+    gap: 5px;
+    padding-top: 12px;
+    padding-bottom: 12px
+  }
+
+  .qv-arab {
+    font-size: 17px;
+    line-height: 1.6
+  }
+
+  .qv-translation {
+    font-size: 10px;
+    line-height: 1.35
+  }
+}
+
+/* Golden Langsat: profile asset-based, mobile-first, exactly one viewport. */
+.wedd-slide-content:has(.gold-page),
+.wedd-slide-content:has(.qv-page) {
+  top: 0 !important;
+  bottom: 0 !important;
+  transform: none !important;
+  height: 100% !important;
+}
+
+.wedd-slide-content>.gold-page,
+.wedd-slide-content>.qv-page {
+  height: 100% !important;
+  min-height: 100% !important;
+  padding: 0 !important;
+}
+
+.gold-page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  height: 100dvh;
+  background: radial-gradient(circle at 80% 8%, #ffe7a4, transparent 40%), linear-gradient(145deg, #fffdf7, #fff4d7 65%, #ffe7ad);
+  color: #593e2c;
+}
+
+.gold-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/decorations/bg-golden-langsat.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: .9;
+}
+
+.gold-asset {
+  position: absolute;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+.gold-corner {
+  width: 30%;
+  max-width: 250px;
+  top: 0;
+  left: 0;
+  z-index: 0
+}
+
+.gold-corner-right {
+  left: auto;
+  right: 0;
+  transform: scaleX(-1)
+}
+
+.gold-pendant {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 8%;
+  width: 20%;
+  z-index: 0
+}
+
+.gold-mihrab {
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 30%;
+  opacity: .55;
+  z-index: 0
+}
+
+.gold-floral-bottom {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 13%;
+  object-fit: fill;
+  z-index: 0
+}
+
+.gold-content {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: min(100% - 32px, 820px);
+  height: 100%;
+  margin: auto;
+  padding: 80px 0 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+}
+
+.gold-header {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: clamp(3px, .6dvh, 7px)
+}
+
+.gold-kufi {
+  position: relative;
+  width: clamp(42px, 8dvh, 84px);
+  height: clamp(42px, 8dvh, 84px);
+  object-fit: contain
+}
+
+.gold-salam {
+  font: clamp(10px, 1.6dvh, 14px) Georgia, serif;
+  color: #a47c3f
+}
+
+.gold-header h2 {
+  font: 400 clamp(23px, 3.6dvh, 39px)/1.15 Georgia, serif;
+  color: #704523;
+  margin: 0 !important
+}
+
+.gold-intro {
+  font-size: clamp(10px, 1.5dvh, 14px);
+  line-height: 1.35;
+  max-width: 410px;
+  color: #735d49
+}
+
+.gold-cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(8px, 2.5vw, 24px);
+  position: relative;
+  align-items: stretch;
+  min-height: 0
+}
+
+.gold-person {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(10px, 1.5dvh, 19px) clamp(7px, 1.8vw, 20px);
+  gap: clamp(5px, .9dvh, 10px);
+  border: 1px solid #e5bd72;
+  border-radius: clamp(18px, 3vw, 30px);
+  background: linear-gradient(145deg, #fffefaeb, #fffaf0dd);
+  box-shadow: 0 10px 25px #8c64231a
+}
+
+.gold-person-bride {
+  background: linear-gradient(145deg, #fffefaed, #fff0cbdc)
+}
+
+.gold-portrait {
+  width: clamp(60px, 11dvh, 110px);
+  height: clamp(60px, 11dvh, 110px);
+  position: relative;
+  flex-shrink: 0
+}
+
+.gold-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #d9ad58;
+  padding: 3px;
+  background: #fff
+}
+
+.gold-portrait-border {
+  inset: -10%;
+  width: 120%;
+  height: 120%
+}
+
+.gold-role {
+  font-size: clamp(8px, 1.2dvh, 11px);
+  letter-spacing: .12em;
+  color: #aa8348
+}
+
+.gold-name {
+  font: 400 clamp(15px, 2.4dvh, 26px)/1.08 Georgia, serif !important;
+  color: #5a3826;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 2.2em
+}
+
+.gold-name span {
+  display: block;
+  white-space: nowrap
+}
+
+.gold-mini-divider {
+  position: relative;
+  width: 65%;
+  height: clamp(9px, 1.4dvh, 16px)
+}
+
+.gold-parent {
+  font-size: clamp(9px, 1.4dvh, 13px);
+  line-height: 1.32;
+  color: #735a42;
+  min-height: 3.4em
+}
+
+.gold-parent strong {
+  font-weight: 500;
+  color: #573d2b
+}
+
+.gold-address {
+  border-top: 1px solid #e6cc96;
+  width: 100%;
+  padding-top: clamp(7px, 1.1dvh, 13px);
+  font-size: clamp(8px, 1.2dvh, 12px);
+  line-height: 1.35;
+  color: #775e46;
+  margin-top: auto
+}
+
+.gold-heart {
+  z-index: 3;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(36px, 8vw, 86px);
+  height: clamp(45px, 10vw, 100px);
+  filter: drop-shadow(0 2px 5px #fff9e9)
+}
+
+.gold-signature {
+  text-align: center;
+  font: clamp(10px, 1.4dvh, 14px) Georgia, serif;
+  letter-spacing: .24em;
+  color: #9a733d
+}
+
+.gold-signature span {
+  font-style: italic
+}
+
+@media(min-width:768px) {
+  .gold-content {
+    width: min(90%, 940px)
+  }
+
+  .gold-cards {
+    gap: 36px
+  }
+
+  .gold-person {
+    padding: 24px
+  }
+
+  .gold-portrait {
+    width: clamp(105px, 15dvh, 150px);
+    height: clamp(105px, 15dvh, 150px)
+  }
+
+  .gold-name {
+    font-size: clamp(22px, 3dvh, 34px) !important
+  }
+}
+
+@media(max-height:650px) {
+  .gold-content {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    gap: 7px
+  }
+
+  .gold-kufi {
+    width: 36px;
+    height: 36px
+  }
+
+  .gold-portrait {
+    width: 48px;
+    height: 48px
+  }
+
+  .gold-person {
+    padding: 7px 6px;
+    gap: 3px
+  }
+
+  .gold-header h2 {
+    font-size: 21px !important
+  }
+
+  .gold-intro {
+    font-size: 10px
+  }
+
+  .gold-name {
+    font-size: 15px !important
+  }
+
+  .gold-parent {
+    font-size: 9px
+  }
+
+  .gold-address {
+    font-size: 8px;
+    padding-top: 5px
+  }
+
+  .gold-signature {
+    font-size: 9px
+  }
+}
+
+@media(max-width:360px) {
+  .gold-content {
+    width: calc(100% - 20px)
+  }
+
+  .gold-person {
+    padding-left: 5px;
+    padding-right: 5px
+  }
+
+  .gold-name {
+    font-size: 14px !important
+  }
+
+  .gold-heart {
+    width: 32px
+  }
+}

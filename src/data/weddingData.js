@@ -1,16 +1,18 @@
 export const weddingData = {
   groom: {
-    name: "Naruto Uzumaki",
-    father: "Minator Namikaze",
-    mother: "Kushina Uzumaki",
+    name: "Nana Wartana",
+    father: "Alm. Dasim",
+    mother: "Saripah",
     image: "/images/groom.png",
+    address: "Dusun Cisahang, Desa Mekarmulya, Kec. Kertajati, Kab. Majalengka",
   },
 
   bride: {
-    name: "Hinata Hyuga",
-    father: "Hiashi Hyuga",
-    mother: "Risa Hyuga",
+    name: "Meysa Dwi Wahyuni",
+    father: "Ade Suarna",
+    mother: "Elin Yulianti",
     image: "/images/bride.png",
+    address: "Dusun Caricangkas, Desa Karyamukti, Kec. Tomo, Kab. Sumedang",
   },
 
   event: {
@@ -28,25 +30,25 @@ export const weddingData = {
       type: "BCA",
       logo: "/icon/bca.png",
       number: "1234567890",
-      name: "Naruto Uzumaki",
+      name: "Nana Wartana",
     },
     {
       type: "CIMB Niaga",
       logo: "/icon/cimb.png",
       number: "9876543210",
-      name: "Hinata Hyuga",
+      name: "Meysa Dwi Wahyuni",
     },
     {
       type: "DANA",
       logo: "/icon/dana.png",
       number: "081234567890",
-      name: "Naruto Uzumaki",
+      name: "Nana Wartana",
     },
     {
       type: "GoPay",
       logo: "/icon/gopay.png",
       number: "089876543210",
-      name: "Hinata Hyuga",
+      name: "Meysa Dwi Wahyuni",
     },
   ],
 
