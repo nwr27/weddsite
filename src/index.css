@@ -1045,12 +1045,14 @@ body {
   height: 100% !important;
   transform: none !important;
 }
-.wedd-slide-content > .gold-page,
-.wedd-slide-content > .qv-page {
+
+.wedd-slide-content>.gold-page,
+.wedd-slide-content>.qv-page {
   height: 100% !important;
   min-height: 100% !important;
   padding: 0 !important;
 }
+
 .gold-page {
   position: relative;
   isolation: isolate;
@@ -1060,6 +1062,7 @@ body {
   color: #593e2c;
   background: #fff8e8;
 }
+
 .gold-page::before {
   content: "";
   position: absolute;
@@ -1067,116 +1070,279 @@ body {
   z-index: -1;
   background: url('/decorations/bg-golden-langsat.webp') center / cover no-repeat;
 }
-.gold-asset { position: absolute; pointer-events: none; object-fit: contain; }
+
+.gold-asset {
+  position: absolute;
+  pointer-events: none;
+  object-fit: contain;
+}
+
 /* Bunga sudah menyatu dengan background. */
-.gold-corner, .gold-floral-bottom { display: none; }
+.gold-corner,
+.gold-floral-bottom {
+  display: none;
+}
+
 /* Pendant di atas mihrab, tidak menutupi Kufi. */
 .gold-pendant {
-  top: 0; left: 50%; transform: translateX(-50%);
-  width: clamp(28px, 7dvh, 54px); height: clamp(38px, 9dvh, 68px);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(28px, 7dvh, 54px);
+  height: clamp(38px, 9dvh, 68px);
   z-index: 2;
 }
+
 .gold-mihrab {
-  top: clamp(35px, 7dvh, 62px); left: 50%; transform: translateX(-50%);
-  width: clamp(120px, 45%, 240px); height: clamp(100px, 22dvh, 195px);
-  opacity: .55; z-index: 0;
+  top: clamp(35px, 7dvh, 62px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(120px, 45%, 240px);
+  height: clamp(100px, 22dvh, 195px);
+  opacity: .55;
+  z-index: 0;
 }
+
 .gold-content {
-  position: relative; z-index: 1; box-sizing: border-box;
-  width: min(calc(100% - 26px), 760px); height: 100%; margin: auto;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: min(calc(100% - 26px), 760px);
+  height: 100%;
+  margin: auto;
   padding: clamp(92px, 17dvh, 155px) 0 clamp(40px, 9dvh, 85px);
-  display: flex; flex-direction: column; align-items: stretch;
-  justify-content: center; gap: clamp(8px, 1.5dvh, 17px);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: clamp(8px, 1.5dvh, 17px);
 }
+
 .gold-header {
-  text-align: center; display: flex; align-items: center;
-  flex-direction: column; gap: clamp(2px, .5dvh, 6px);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: clamp(2px, .5dvh, 6px);
   flex-shrink: 0;
 }
+
 .gold-kufi {
-  position: relative; width: clamp(90px, 12dvh, 130px);
-  height: clamp(90px, 12dvh, 130px); object-fit: contain;
+  position: relative;
+  width: clamp(90px, 12dvh, 130px);
+  height: clamp(90px, 12dvh, 130px);
+  object-fit: contain;
 }
-.gold-salam { font: clamp(10px, 1.5dvh, 14px) Georgia, serif; color: #a47c3f; }
+
+.gold-salam {
+  font: clamp(10px, 1.5dvh, 14px) Georgia, serif;
+  color: #a47c3f;
+}
+
 .gold-header h2 {
   font: 400 clamp(22px, 3.3dvh, 36px)/1.12 Georgia, serif;
-  color: #704523; margin: 0 !important;
+  color: #704523;
+  margin: 0 !important;
 }
+
 .gold-intro {
-  font-size: clamp(10px, 1.35dvh, 13px); line-height: 1.3;
-  max-width: 350px; color: #735d49;
+  font-size: clamp(10px, 1.35dvh, 13px);
+  line-height: 1.3;
+  max-width: 350px;
+  color: #735d49;
 }
+
 .gold-cards {
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(8px, 2vw, 22px); position: relative; align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(8px, 2vw, 22px);
+  position: relative;
+  align-items: stretch;
   min-height: 0;
 }
+
 .gold-person {
-  min-width: 0; min-height: 0; display: flex; flex-direction: column;
-  align-items: center; text-align: center;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   padding: clamp(7px, 1.1dvh, 16px) clamp(5px, 1.4vw, 18px);
-  gap: clamp(3px, .6dvh, 8px); border: 1px solid #e5bd72;
+  gap: clamp(3px, .6dvh, 8px);
+  border: 1px solid #e5bd72;
   border-radius: clamp(15px, 3vw, 27px);
   background: linear-gradient(145deg, #fffefaed, #fff9ebdf);
   box-shadow: 0 8px 22px #8c64231a;
 }
-.gold-person-bride { background: linear-gradient(145deg, #fffefaef, #fff0cbe3); }
+
+.gold-person-bride {
+  background: linear-gradient(145deg, #fffefaef, #fff0cbe3);
+}
+
 .gold-portrait {
-  width: clamp(56px, 9dvh, 100px); height: clamp(56px, 9dvh, 100px);
-  position: relative; flex-shrink: 0;
+  width: clamp(56px, 9dvh, 100px);
+  height: clamp(56px, 9dvh, 100px);
+  position: relative;
+  flex-shrink: 0;
 }
+
 .gold-photo {
-  width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
-  border: 2px solid #d9ad58; padding: 3px; background: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #d9ad58;
+  padding: 3px;
+  background: #fff;
 }
-.gold-portrait-border { inset: -10%; width: 120%; height: 120%; }
-.gold-role { font-size: clamp(7px, 1dvh, 11px); letter-spacing: .1em; color: #aa8348; }
+
+.gold-portrait-border {
+  inset: -10%;
+  width: 120%;
+  height: 120%;
+}
+
+.gold-role {
+  font-size: clamp(7px, 1dvh, 11px);
+  letter-spacing: .1em;
+  color: #aa8348;
+}
+
 .gold-name {
   font: 400 clamp(15px, 2.2dvh, 26px)/1.08 Georgia, serif !important;
-  color: #5a3826; margin: 0 !important; display: flex;
-  flex-direction: column; justify-content: center; min-height: 2.2em;
+  color: #5a3826;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 2.2em;
 }
-.gold-name span { display: block; white-space: nowrap; }
-.gold-mini-divider { position: relative; width: 65%; height: clamp(7px, 1dvh, 13px); }
+
+.gold-name span {
+  display: block;
+  white-space: nowrap;
+}
+
+.gold-mini-divider {
+  position: relative;
+  width: 65%;
+  height: clamp(7px, 1dvh, 13px);
+}
+
 .gold-parent {
-  font-size: clamp(8px, 1.2dvh, 12px); line-height: 1.25;
-  color: #735a42; min-height: 3em;
+  font-size: clamp(8px, 1.2dvh, 12px);
+  line-height: 1.25;
+  color: #735a42;
+  min-height: 3em;
 }
-.gold-parent strong { font-weight: 500; color: #573d2b; }
+
+.gold-parent strong {
+  font-weight: 500;
+  color: #573d2b;
+}
+
 .gold-address {
-  border-top: 1px solid #e6cc96; width: 100%;
+  border-top: 1px solid #e6cc96;
+  width: 100%;
   padding-top: clamp(5px, .8dvh, 10px);
-  font-size: clamp(7px, 1.05dvh, 11px); line-height: 1.25;
-  color: #775e46; margin-top: auto;
+  font-size: clamp(7px, 1.05dvh, 11px);
+  line-height: 1.25;
+  color: #775e46;
+  margin-top: auto;
 }
+
 .gold-heart {
-  z-index: 3; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: clamp(34px, 7vw, 68px); height: clamp(34px, 7vw, 68px);
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(34px, 7vw, 68px);
+  height: clamp(34px, 7vw, 68px);
   filter: drop-shadow(0 2px 5px #fff9e9);
 }
+
 .gold-signature {
-  text-align: center; font: clamp(10px, 1.3dvh, 14px) Georgia, serif;
-  letter-spacing: .2em; color: #9a733d; flex-shrink: 0;
+  text-align: center;
+  font: clamp(10px, 1.3dvh, 14px) Georgia, serif;
+  letter-spacing: .2em;
+  color: #9a733d;
+  flex-shrink: 0;
 }
+
 @media (max-height: 690px) {
-  .gold-content { padding-top: 75px; padding-bottom: 32px; gap: 6px; }
-  .gold-kufi { width: 90px; height: 90px; }
-  .gold-portrait { width: 48px; height: 48px; }
-  .gold-person { padding: 6px 5px; gap: 3px; }
-  .gold-header h2 { font-size: 21px; }
-  .gold-name { font-size: 14px !important; }
-  .gold-parent { font-size: 8px; }
-  .gold-address { font-size: 7px; }
+  .gold-content {
+    padding-top: 75px;
+    padding-bottom: 32px;
+    gap: 6px;
+  }
+
+  .gold-kufi {
+    width: 90px;
+    height: 90px;
+  }
+
+  .gold-portrait {
+    width: 48px;
+    height: 48px;
+  }
+
+  .gold-person {
+    padding: 6px 5px;
+    gap: 3px;
+  }
+
+  .gold-header h2 {
+    font-size: 21px;
+  }
+
+  .gold-name {
+    font-size: 14px !important;
+  }
+
+  .gold-parent {
+    font-size: 8px;
+  }
+
+  .gold-address {
+    font-size: 7px;
+  }
 }
+
 @media (max-width: 360px) {
-  .gold-content { width: calc(100% - 18px); }
-  .gold-name { font-size: 14px !important; }
-  .gold-person { padding-left: 4px; padding-right: 4px; }
+  .gold-content {
+    width: calc(100% - 18px);
+  }
+
+  .gold-name {
+    font-size: 14px !important;
+  }
+
+  .gold-person {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
 }
+
 @media (min-width: 768px) {
-  .gold-content { width: min(78%, 760px); }
-  .gold-cards { gap: clamp(24px, 4vw, 44px); }
-  .gold-person { padding: clamp(14px, 2dvh, 25px); }
-  .gold-portrait { width: clamp(85px, 12dvh, 130px); height: clamp(85px, 12dvh, 130px); }
-  .gold-name { font-size: clamp(21px, 3dvh, 31px) !important; }
+  .gold-content {
+    width: min(78%, 760px);
+  }
+
+  .gold-cards {
+    gap: clamp(24px, 4vw, 44px);
+  }
+
+  .gold-person {
+    padding: clamp(14px, 2dvh, 25px);
+  }
+
+  .gold-portrait {
+    width: clamp(85px, 12dvh, 130px);
+    height: clamp(85px, 12dvh, 130px);
+  }
+
+  .gold-name {
+    font-size: clamp(21px, 3dvh, 31px) !important;
+  }
 }
