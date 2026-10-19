@@ -1,44 +1,71 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import SlideContent from "./components/SlideContent.jsx";
 
 const slides = [
-  ["opening"],
-  ["verse"],
-  ["countdown"],
-  ["event"],
-  ["gallery"],
-  ["rsvp"],
-  ["gift"],
-  ["story"],
-  ["guestbook"],
-  ["closing"],
+  "opening", "verse", "countdown", "event", "gallery",
+  "rsvp", "gift", "story", "guestbook", "closing",
 ];
 
 export default function App() {
   const [index, setIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(null);
   const [opened, setOpened] = useState(false);
-  const go = (step) => setIndex((current) => Math.max(0, Math.min(slides.length - 1, current + step)));
-  const handleTouchEnd = (event) => {
-    if (touchStart === null) return;
-    const dx = event.changedTouches[0].clientX - touchStart;
-    if (Math.abs(dx) > 55) go(dx < 0 ? 1 : -1);
-    setTouchStart(null);
+  const touchStart = useRef(null);
+  const lastWheel = useRef(0);
+
+  const go = (direction) => {
+    setIndex((current) =>
+      Math.max(0, Math.min(slides.length - 1, current + direction))
+    );
   };
+
+  const handleTouchStart = (event) => {
+    touchStart.current = {
+      x: event.touches[0].clientX,
+      y: event.touches[0].clientY,
+    };
+  };
+
+  const handleTouchEnd = (event) => {
+    if (!touchStart.current) return;
+    const deltaY = event.changedTouches[0].clientY - touchStart.current.y;
+    const deltaX = event.changedTouches[0].clientX - touchStart.current.x;
+    touchStart.current = null;
+
+    // Geser ke atas = slide berikutnya; ke bawah = sebelumnya.
+    if (Math.abs(deltaY) > 55 && Math.abs(deltaY) > Math.abs(deltaX)) {
+      go(deltaY < 0 ? 1 : -1);
+    }
+  };
+
+  const handleWheel = (event) => {
+    if (Math.abs(event.deltaY) < 12) return;
+    const now = Date.now();
+    // Mencegah satu putaran roda mouse melompati banyak slide.
+    if (now - lastWheel.current < 650) return;
+    lastWheel.current = now;
+    go(event.deltaY > 0 ? 1 : -1);
+  };
+
   return (
     <main className="site">
       {!opened ? (
         <section className="welcome">
-          <p>Undangan Pernikahan</p><h1>Nana &amp; Meysa</h1>
+          <p>Undangan Pernikahan</p>
+          <h1>Nana &amp; Meysa</h1>
           <button onClick={() => setOpened(true)}>Buka Undangan</button>
         </section>
       ) : (
-        <section className="slide" onTouchStart={(e) => setTouchStart(e.touches[0].clientX)} onTouchEnd={handleTouchEnd}>
-          <div className="slide-body" key={slides[index][0]}><SlideContent id={slides[index][0]} /></div>
+        <section
+          className="slide"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          onWheel={handleWheel}
+        >
+          <div className="slide-body" key={slides[index]}>
+            <SlideContent id={slides[index]} />
+          </div>
           <nav className="slide-nav" aria-label="Navigasi slide">
-            <button disabled={index === 0} onClick={() => go(-1)}>Sebelumnya</button>
-            <span>{slides[index][1]}</span>
-            <button disabled={index === slides.length - 1} onClick={() => go(1)}>Berikutnya</button>
+            <span>{index + 1} / {slides.length}</span>
           </nav>
         </section>
       )}
