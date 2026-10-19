@@ -6,6 +6,7 @@ import EventSlide from "./EventSlide.jsx";
 import GallerySlide from "./GallerySlide.jsx";
 import GuestbookSlide from "./GuestbookSlide.jsx";
 import RSVPSlide from "./RSVPSlide.jsx";
+import GiftSlide from "./GiftSlide.jsx";
 
 export default function SlideContent({ id }) {
   switch (id) {
@@ -16,7 +17,7 @@ export default function SlideContent({ id }) {
     case "gallery": return <GallerySlide />;
     case "guestbook": return <GuestbookSlide />;
     case "rsvp": return <RSVPSlide />;
-    case "gift": return <><h1>Hadiah Pernikahan</h1></>;
+    case "gift": return <GiftSlide />;
     case "story": return <><h1>Kisah Kami</h1><div className="stack">{data.loveStory.map((item) => <article key={item.year}><strong>{item.year} · {item.title}</strong><p>{item.text}</p></article>)}</div></>;
     case "closing": return <><h1>Terima Kasih</h1></>;
     default: return null;
