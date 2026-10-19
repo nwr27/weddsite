@@ -355,3 +355,50 @@ button:disabled {
     right: 8px;
   }
 }
+
+/* =================================
+   SLIDE 2 — KALIGRAFI KUFI
+================================= */
+
+.verse-slide {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.verse-kufi {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* SLIDE 2 — TERJEMAHAN AYAT */
+
+.verse-slide {
+  gap: 28px;
+  padding: 24px 18px;
+}
+
+.verse-translation {
+  max-width: 340px;
+  text-align: center;
+}
+
+.verse-translation p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #59442f;
+}
+
+.verse-translation span {
+  display: block;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #b68d4c;
+}
