@@ -876,3 +876,39 @@ button:disabled {
     aspect-ratio: 16 / 8;
   }
 }
+
+/* =================================
+   GLOBAL MUSIC CONTROL
+================================= */
+
+.music-toggle {
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  z-index: 30;
+
+  width: 36px;
+  height: 36px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(182, 141, 76, 0.75);
+  border-radius: 50%;
+
+  background: rgba(37, 30, 25, 0.78);
+  color: #e8d6b6;
+
+  font-size: 15px;
+  line-height: 1;
+
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.music-toggle:focus-visible {
+  outline: 2px solid #e8d6b6;
+  outline-offset: 3px;
+}
