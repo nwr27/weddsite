@@ -16,13 +16,13 @@ export const weddingData = {
   },
 
   event: {
-    dateText: "Senin, 8 Februari 2027",
-    date: "2027-02-08T08:00:00",
+    dateText: "Sabtu, 27 April 2027",
+    date: "2027-04-27T08:00:00",
     akadTime: "08.00 WIB",
     receptionTime: "11.00 - 14.00 WIB",
-    place: "Masjid Alfirdaus",
-    address: "Kadipaten",
-    mapsUrl: "https://maps.app.goo.gl/S11kYYfSK7UvJHHu9",
+    place: "Kediaman Mempelai Wanita",
+    address: "Dusun Caricangkas, Desa Karyamukti, Kec. Tomo, Kab. Sumedang",
+    mapsUrl: "https://maps.app.goo.gl/7JdruBieMxZTcRWf8",
   },
 
   gifts: [
@@ -33,45 +33,45 @@ export const weddingData = {
       name: "Nana Wartana",
     },
     {
-      type: "CIMB Niaga",
-      logo: "/icon/cimb.png",
-      number: "9876543210",
+      type: "SeaBank",
+      logo: "/icon/seabank.png",
+      number: "",
       name: "Meysa Dwi Wahyuni",
-    },
-    {
-      type: "DANA",
-      logo: "/icon/dana.png",
-      number: "081234567890",
-      name: "Nana Wartana",
     },
     {
       type: "GoPay",
       logo: "/icon/gopay.png",
-      number: "089876543210",
+      number: "085163587727",
+      name: "Nana Wartana",
+    },
+    {
+      type: "DANA",
+      logo: "/icon/dana.png",
+      number: "085603322554",
       name: "Meysa Dwi Wahyuni",
     },
   ],
 
   loveStory: [
     {
-      year: "2020",
+      year: "2024",
       title: "Awal Bertemu",
-      text: "Kami pertama kali bertemu dalam suasana sederhana yang menjadi awal dari cerita panjang kami.",
+      text: "...",
     },
     {
-      year: "2022",
-      title: "Mulai Dekat",
-      text: "Dari percakapan kecil, kami mulai saling mengenal dan memahami satu sama lain.",
+      year: "2025",
+      title: "Mulai Menggali Informasi",
+      text: "...",
     },
     {
       year: "2026",
       title: "Lamaran",
-      text: "Dengan restu keluarga, kami memutuskan untuk melangkah ke jenjang yang lebih serius.",
+      text: "...",
     },
     {
       year: "2027",
       title: "Hari Bahagia",
-      text: "Kami mengikat janji suci dalam pernikahan yang penuh doa dan harapan.",
+      text: "...",
     },
   ],
 
