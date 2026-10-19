@@ -1330,13 +1330,17 @@ button:disabled {
 .gift-slide {
   width: 100%;
   display: flex;
-  background: radial-gradient(ellipse at 50% 0%,
+  background:
+    radial-gradient(ellipse at 50% 45%,
+      rgba(226, 196, 144, 0.30) 0%,
+      rgba(249, 244, 234, 0.35) 42%,
+      transparent 75%),
+    linear-gradient(135deg,
+      #f4e9d6 0%,
+      #fcf8f0 35%,
+      #f6eddf 70%,
+      #ead8bb 100%);
 
-      rgba(224, 190, 131, 0.22),
-
-      transparent 65%),
-
-    #f9f4ea;
   color: #59442f;
 }
 
@@ -1484,22 +1488,14 @@ button:disabled {
 }
 
 .gift-slide {
-  width: 100%;
   min-height: 100%;
   height: auto;
-  padding: 18px 34px 24px;
+  /* padding: 18px 34px 24px; */
+  padding: 65px 34px;
 
-  display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 
-  background:
-    radial-gradient(ellipse at 50% 0%,
-      rgba(224, 190, 131, 0.22),
-      transparent 65%),
-    #f9f4ea;
-
-  color: #59442f;
 }
 
 .gift-inner {
@@ -1511,7 +1507,7 @@ button:disabled {
   align-items: center;
   gap: 11px;
   flex-shrink: 0;
-
+  margin-inline: auto;
   text-align: center;
 }
 
