@@ -31,44 +31,42 @@ export default function GiftSlide() {
 
         <div className="gift-list">
           {weddingData.gifts.map((gift) => (
-            <article
-              className="gift-card"
-              key={gift.type}
-            >
-              <div className="gift-card-header">
+            <article className="gift-card" key={gift.type}>
+              <div className="gift-card-info">
+                <span className="gift-label">
+                  {["BCA", "SeaBank"].includes(gift.type)
+                    ? "NOMOR REKENING"
+                    : "NOMOR"}
+                </span>
+
+                <strong className="gift-number">
+                  {gift.number}
+                </strong>
+
+                <div className="gift-owner">
+                  <span>ATAS NAMA</span>
+                  <strong>{gift.name}</strong>
+                </div>
+              </div>
+
+              <div className="gift-card-actions">
                 <img
                   src={gift.logo}
                   alt={`Logo ${gift.type}`}
                   className="gift-logo"
                 />
-              </div>
-
-              <div className="gift-card-body">
-                <strong className="gift-number">
-                  {gift.number}
-                </strong>
-              </div>
-
-              <div className="gift-card-footer">
-                <div className="gift-owner">
-                  <span>ATAS NAMA</span>
-                  <strong>{gift.name}</strong>
-                </div>
 
                 <button
                   type="button"
                   className="gift-copy-button"
-                  onClick={() =>
-                    handleCopy(gift.number, gift.type)
-                  }
+                  onClick={() => handleCopy(gift.number, gift.type)}
                   aria-label={`Salin nomor ${gift.type}`}
                 >
-                  {copied === gift.type
-                    ? "✓ Tersalin"
-                    : "Salin"}
+                  {copied === gift.type ? "✓ Tersalin" : "Salin"}
                 </button>
               </div>
             </article>
+
           ))}
         </div>
 
