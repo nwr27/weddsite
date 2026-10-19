@@ -912,3 +912,219 @@ button:disabled {
   outline: 2px solid #e8d6b6;
   outline-offset: 3px;
 }
+
+/* ==========================================
+   SLIDE 6 — RSVP
+   Royal Japanese Islamic Night
+========================================== */
+
+/* Slide 6 — Full bleed, tanpa border luar */
+.slide:has(.rsvp-content) {
+  padding: 0;
+  gap: 0;
+}
+
+.slide-body:has(.rsvp-content) {
+  padding: 0;
+}
+
+.rsvp-content {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  padding: 38px 24px 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+
+  color: #eee0c8;
+  background:
+    radial-gradient(ellipse at 50% 0%,
+      rgba(153, 113, 59, 0.14),
+      transparent 65%),
+    #211b18;
+}
+
+.rsvp-header {
+  text-align: center;
+}
+
+.rsvp-eyebrow {
+  margin: 0 0 10px;
+  color: #c9a15c;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.rsvp-header h2 {
+  margin: 0 0 10px;
+  color: #ead2a5;
+  font-family: Georgia, serif;
+  font-size: clamp(38px, 10vw, 52px);
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+.rsvp-header>p:last-child {
+  margin: 0;
+  color: #c7b59c;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.rsvp-form {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 420px;
+  padding: 25px 21px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+
+  border: 1px solid rgba(194, 151, 87, 0.48);
+  border-radius: 12px;
+
+  background: rgba(48, 39, 32, 0.88);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+}
+
+.rsvp-form>label,
+.rsvp-attendance legend {
+  color: #e6cfaa;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.rsvp-form>input,
+.rsvp-form>select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 13px;
+
+  border: 1px solid rgba(194, 151, 87, 0.35);
+  border-radius: 7px;
+  outline: none;
+
+  background: #241e1a;
+  color: #f0e1c9;
+  font: inherit;
+  font-size: 13px;
+}
+
+.rsvp-form>input::placeholder {
+  color: #a99a85;
+}
+
+.rsvp-form>input:focus,
+.rsvp-form>select:focus {
+  border-color: #d5af70;
+}
+
+.rsvp-attendance {
+  min-width: 0;
+  margin: 3px 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  border: 0;
+}
+
+.rsvp-attendance legend {
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.rsvp-attendance label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #e4d3b9;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.rsvp-attendance input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #c9a15c;
+}
+
+.rsvp-form>button[type="submit"] {
+  min-height: 45px;
+  margin-top: 9px;
+  padding: 11px 15px;
+
+  border: 0;
+  border-radius: 7px;
+
+  background: #c9a15c;
+  color: #241b15;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.rsvp-form>button[type="submit"]:active {
+  background: #e2bd7b;
+}
+
+.rsvp-form>button[type="submit"]:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.rsvp-form [role="status"] {
+  margin: 0;
+  color: #e8d6b6;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.rsvp-footer {
+  max-width: 300px;
+  margin: 0;
+  color: #c7b59c;
+  font-size: 11px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+@media (max-width: 380px) {
+  .rsvp-content {
+    padding: 25px 17px 65px;
+    gap: 17px;
+  }
+
+  .rsvp-form {
+    padding: 19px 16px;
+    gap: 11px;
+  }
+
+  .rsvp-header h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-height: 700px) {
+  .rsvp-content {
+    justify-content: flex-start;
+  }
+}

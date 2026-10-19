@@ -9,10 +9,10 @@ const slides = [
   "countdown",
   "event",
   "gallery",
+  "guestbook",
   "rsvp",
   "gift",
   "story",
-  "guestbook",
   "closing",
 ];
 
