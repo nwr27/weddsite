@@ -29,7 +29,7 @@ export const weddingData = {
     {
       type: "BCA",
       logo: "/icon/bca.png",
-      number: "1234567890",
+      number: "4181388620",
       name: "Nana Wartana",
     },
     {
