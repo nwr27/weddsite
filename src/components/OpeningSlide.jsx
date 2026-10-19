@@ -5,10 +5,35 @@ function CoupleCard({ person, label }) {
     <article className="person">
       <img className="person-photo" src={person.image} alt={person.name} />
       <small>{label}</small>
-      <h3>{person.name}</h3>
-      <p>Anak kedua dari</p>
-      <p>{person.father} &amp; {person.mother}</p>
-      <p className="muted">{person.address}</p>
+      <h3>
+        {person.name === "Nana Wartana" ? (
+          <>
+            Nana
+            <br />
+            Wartana
+          </>
+        ) : (
+          person.name
+        )}
+      </h3>
+      <p>{person.name === "Nana Wartana" ? (
+        <>
+          Putra dari {person.father} &amp; {person.mother}
+        </>
+      ) : (
+        <>
+            Putri dari {person.father} &amp; <br />{person.mother}
+        </>
+      )}</p>
+      <p className="muted">{person.name === "Nana Wartana" ? (
+        <>
+          Dusun Cisahang,<br />Desa Mekarmulya, Kec. Kertajati,<br />Kab. Majalengka
+        </>
+      ) : (
+        <>
+            Dusun Caricangkas,<br />Desa Karyamukti, Kec. Tomo,<br />Kab. Sumedang
+        </>
+      )}</p>
     </article>
   );
 }
