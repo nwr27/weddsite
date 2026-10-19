@@ -1,12 +1,13 @@
 import OpeningSlide from "./OpeningSlide.jsx";
 import { weddingData as data } from "../data/weddingData.js";
 import VerseSlide from "./VerseSlide.jsx";
+import CountdownSlide from "./CountdownSlide.jsx";
 
 export default function SlideContent({ id }) {
   switch (id) {
     case "opening": return <OpeningSlide />;
     case "verse": return <VerseSlide />;
-    case "countdown": return <><h1>Menuju Hari Bahagia</h1><p>{data.event.dateText}</p></>;
+    case "countdown": return <CountdownSlide />;
     case "event": return <><h1>Akad &amp; Resepsi</h1><p>{data.event.dateText}</p><p>Akad: {data.event.akadTime}</p><p>Resepsi: {data.event.receptionTime}</p><p>{data.event.place}, {data.event.address}</p></>;
     case "gallery": return <><h1>Galeri</h1><div className="gallery">{data.gallery.map((src) => <img key={src} src={src} alt="Galeri pasangan" loading="lazy" />)}</div></>;
     case "rsvp": return <><h1>Konfirmasi Kehadiran</h1></>;
