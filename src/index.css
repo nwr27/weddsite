@@ -731,26 +731,6 @@ button:disabled {
   outline-offset: 4px;
 }
 
-/* Bingkai dekoratif kartu acara */
-.event-card {
-  position: relative;
-  background-image: url("/decorations/event-frame.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Divider Jepang–Islam */
-.event-divider {
-  display: block;
-  width: 180px;
-  max-width: 70%;
-  height: auto;
-  object-fit: contain;
-  margin: 0 auto;
-  pointer-events: none;
-}
-
 @media (max-height: 700px) {
   .event-slide {
     padding-top: 20px;
@@ -768,25 +748,5 @@ button:disabled {
   .event-ceremony h2 {
     margin: 4px 0;
     font-size: 19px;
-  }
-
-  /* Bingkai dekoratif kartu acara */
-  .event-card {
-    position: relative;
-    background-image: url("/decorations/event-frame.png");
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  /* Divider Jepang–Islam */
-  .event-divider {
-    display: block;
-    width: 180px;
-    max-width: 70%;
-    height: auto;
-    object-fit: contain;
-    margin: 0 auto;
-    pointer-events: none;
   }
 }
