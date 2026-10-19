@@ -1,26 +1,9 @@
+import OpeningSlide from "./OpeningSlide.jsx";
 import { weddingData as data } from "../data/weddingData.js";
-
-function Person({ person, label }) {
-  return (
-    <article className="person">
-      <img className="person-photo" src={person.image} alt={person.name} />
-      <small>{label}</small>
-      <h3>{person.name}</h3>
-      <p>Anak dari {person.father} &amp; {person.mother}</p>
-      <p className="muted">{person.address}</p>
-    </article>
-  );
-}
 
 export default function SlideContent({ id }) {
   switch (id) {
-    case "opening": return <>
-      <p>Assalamu'alaikum Wr. Wb.</p>
-      <h1>Dua Hati, Satu Janji</h1>
-      <p>Dengan rahmat dan ridha Allah SWT, kami mengundang Anda ke hari bahagia kami.</p>
-      <div className="people"><Person person={data.groom} label="Mempelai Pria" /><Person person={data.bride} label="Mempelai Wanita" /></div>
-      <p>NANA &amp; MEYSA</p>
-    </>;
+    case "opening": return <OpeningSlide />;
     case "verse": return <><h1>Ayat Suci</h1><p>QS. Ar-Rum: 21</p><p>Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan pasangan-pasangan untukmu agar kamu merasa tenteram kepadanya.</p></>;
     case "countdown": return <><h1>Menuju Hari Bahagia</h1><p>{data.event.dateText}</p></>;
     case "event": return <><h1>Akad &amp; Resepsi</h1><p>{data.event.dateText}</p><p>Akad: {data.event.akadTime}</p><p>Resepsi: {data.event.receptionTime}</p><p>{data.event.place}, {data.event.address}</p></>;

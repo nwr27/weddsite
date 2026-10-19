@@ -16,7 +16,7 @@ export const weddingData = {
   },
 
   event: {
-    dateText: "Sabtu, 27 April 2027",
+    dateText: "Selasa, 27 April 2027",
     date: "2027-04-27T08:00:00",
     akadTime: "08.00 WIB",
     receptionTime: "11.00 - 14.00 WIB",
@@ -35,7 +35,7 @@ export const weddingData = {
     {
       type: "SeaBank",
       logo: "/icon/seabank.png",
-      number: "",
+      number: "901932541941",
       name: "Meysa Dwi Wahyuni",
     },
     {
