@@ -51,6 +51,11 @@ export default function CountdownSlide() {
           </div>
         ))}
       </div>
+      <img
+        src="/decorations/gold-divider.png"
+        alt=""
+        className="countdown-divider"
+      />
 
       <p className="countdown-message">
         Menghitung setiap detik menuju janji suci

@@ -449,7 +449,7 @@ button:disabled {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 6px;
 
   padding: 24px 30px;
   text-align: center;
@@ -519,4 +519,52 @@ button:disabled {
   font-size: 12px;
   line-height: 1.6;
   color: #59442f;
+}
+
+/* SLIDE 3 — BACKGROUND DAN BINGKAI */
+
+.slide:has(.countdown-slide) {
+  padding: 0;
+  gap: 0;
+}
+
+.slide-body:has(.countdown-slide) {
+  padding: 0;
+}
+
+.countdown-slide {
+  min-height: 100%;
+  width: 100%;
+  padding: 24px 32px;
+
+  background-image: url("/images/bg-countdown.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.countdown-unit {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  padding: 12px 3px;
+
+  border: none;
+  border-radius: 0;
+  background: url("/decorations/countdown-frame.png") center / 100% 100% no-repeat;
+
+  justify-content: center;
+  gap: 5px;
+}
+
+/* SLIDE 3 — GOLD DIVIDER */
+.countdown-divider {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  pointer-events: none;
+  margin-top: -30px;
+  margin-bottom: -10px;
 }
