@@ -568,3 +568,225 @@ button:disabled {
   margin-top: -30px;
   margin-bottom: -10px;
 }
+
+/* =================================
+   SLIDE 4 — ROYAL JAPANESE ISLAMIC NIGHT
+================================= */
+.slide:has(.event-slide) {
+  padding: 0;
+  gap: 0;
+}
+
+.slide-body:has(.event-slide) {
+  padding: 0;
+}
+
+.event-slide {
+  width: 100%;
+  min-height: 100%;
+  padding: 34px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #efe0c3;
+  background: radial-gradient(ellipse at 50% 38%, #483729 0%, #291f1a 56%, #1b1715 100%);
+  background-image: url("/images/bg-event-night.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.event-inner {
+  width: 100%;
+  max-width: 330px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.event-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  align-items: center;
+}
+
+.event-eyebrow,
+.event-location>span {
+  font-family: system-ui, sans-serif;
+  font-size: 9px;
+  letter-spacing: .22em;
+  color: #cda76d;
+}
+
+.event-heading h1 {
+  margin: 0;
+  color: #f1dfbe;
+  font-size: clamp(26px, 7vw, 34px);
+  line-height: 1.15;
+}
+
+.event-heading h1 span {
+  color: #cda76d;
+  font-weight: normal;
+}
+
+.event-heading p {
+  margin: 0;
+  font-size: 13px;
+  color: #d7bea0;
+}
+
+.event-ceremonies {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+
+.event-ceremony {
+  width: 100%;
+  padding: 17px 12px 18px;
+  border: 1px solid rgba(205, 167, 109, .68);
+  background: rgba(17, 13, 12, .2);
+  position: relative;
+}
+
+.event-ceremony::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(205, 167, 109, .25);
+  pointer-events: none;
+}
+
+.event-ceremony-number {
+  display: block;
+  color: #cda76d;
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+
+.event-ceremony h2 {
+  margin: 7px 0 5px;
+  font-size: 21px;
+  color: #f1dfbe;
+}
+
+.event-ceremony strong {
+  font-size: 14px;
+  font-weight: normal;
+  color: #d8ba8b;
+}
+
+.event-ceremony-separator {
+  color: #cda76d;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.event-location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.event-location h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #f1dfbe;
+}
+
+.event-location p {
+  margin: 0;
+  max-width: 270px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #d7bea0;
+}
+
+.event-location a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 9px 16px;
+  border: 1px solid #b9955b;
+  color: #f1dfbe;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.event-location a:focus-visible {
+  outline: 2px solid #f1dfbe;
+  outline-offset: 4px;
+}
+
+/* Bingkai dekoratif kartu acara */
+.event-card {
+  position: relative;
+  background-image: url("/decorations/event-frame.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Divider Jepang–Islam */
+.event-divider {
+  display: block;
+  width: 180px;
+  max-width: 70%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+@media (max-height: 700px) {
+  .event-slide {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .event-inner {
+    gap: 14px;
+  }
+
+  .event-ceremony {
+    padding: 10px 12px 12px;
+  }
+
+  .event-ceremony h2 {
+    margin: 4px 0;
+    font-size: 19px;
+  }
+
+  /* Bingkai dekoratif kartu acara */
+  .event-card {
+    position: relative;
+    background-image: url("/decorations/event-frame.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Divider Jepang–Islam */
+  .event-divider {
+    display: block;
+    width: 180px;
+    max-width: 70%;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    pointer-events: none;
+  }
+}
