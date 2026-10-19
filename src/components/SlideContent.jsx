@@ -4,6 +4,7 @@ import VerseSlide from "./VerseSlide.jsx";
 import CountdownSlide from "./CountdownSlide.jsx";
 import EventSlide from "./EventSlide.jsx";
 import GallerySlide from "./GallerySlide.jsx";
+import GuestbookSlide from "./GuestbookSlide.jsx";
 import RSVPSlide from "./RSVPSlide.jsx";
 
 export default function SlideContent({ id }) {
@@ -13,7 +14,7 @@ export default function SlideContent({ id }) {
     case "countdown": return <CountdownSlide />;
     case "event": return <EventSlide />;
     case "gallery": return <GallerySlide />;
-    case "guestbook": return <><h1>Ucapan &amp; Doa</h1></>;
+    case "guestbook": return <GuestbookSlide />;
     case "rsvp": return <RSVPSlide />;
     case "gift": return <><h1>Hadiah Pernikahan</h1></>;
     case "story": return <><h1>Kisah Kami</h1><div className="stack">{data.loveStory.map((item) => <article key={item.year}><strong>{item.year} · {item.title}</strong><p>{item.text}</p></article>)}</div></>;

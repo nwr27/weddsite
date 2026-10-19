@@ -1,14 +1,101 @@
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { supabase } from "../lib/supabase.js";
 
 export default function GuestbookSlide() {
   const [guestName, setGuestName] = useState("");
   const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (event) => {
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadMessages() {
+      const { data, error } = await supabase
+        .from("guestbook")
+        .select("id, guest_name, message, created_at")
+        .order("created_at", { ascending: true })
+        .limit(100);
+
+      if (!active) return;
+
+      if (error) {
+        setErrorMessage("Gagal memuat ucapan tamu.");
+      } else {
+        setMessages(data ?? []);
+      }
+
+      setLoading(false);
+    }
+
+    loadMessages();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!loading) {
+      messagesEndRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+    }
+  }, [messages, loading]);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Integrasi Supabase pada tahap berikutnya.
+
+    const name = guestName.trim();
+    const wish = message.trim();
+
+    if (!name || !wish || submitting) return;
+
+    setSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      const { error } = await supabase
+        .from("guestbook")
+        .insert({
+          guest_name: name,
+          message: wish,
+        });
+
+      if (error) throw error;
+
+      const { data, error: loadError } = await supabase
+        .from("guestbook")
+        .select("id, guest_name, message, created_at")
+        .order("created_at", { ascending: true })
+        .limit(100);
+
+      if (loadError) throw loadError;
+
+      setMessages(data ?? []);
+      setMessage("");
+    } catch (error) {
+      console.error("Guestbook Supabase Error:", error);
+      setErrorMessage(
+        "Gagal mengirim ucapan. Silakan coba lagi."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
+
+  const formatTime = (date) =>
+    new Intl.DateTimeFormat("id-ID", {
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZone: "Asia/Jakarta",
+    }).format(new Date(date));
 
   return (
     <section className="guestbook-slide">
@@ -23,25 +110,37 @@ export default function GuestbookSlide() {
         </header>
 
         <div className="guestbook-messages">
-          <div className="guestbook-date">Today</div>
-
-          <div className="guestbook-bubble">
-            <span className="guestbook-sender">Alya</span>
-            <p>
-              MasyaAllah, selamat menempuh hidup baru!
-              Semoga sakinah mawaddah warahmah 🤍
-            </p>
-            <time>19:05</time>
+          <div className="guestbook-date">
+            Ucapan &amp; Doa
           </div>
 
-          <div className="guestbook-bubble">
-            <span className="guestbook-sender">Fajar</span>
-            <p>
-              Barakallahu lakuma. Semoga selalu
-              diberikan kebahagiaan dan keberkahan ✨
+          {loading && (
+            <p className="guestbook-info">
+              Memuat ucapan...
             </p>
-            <time>19:08</time>
-          </div>
+          )}
+
+          {!loading && messages.length === 0 && (
+            <p className="guestbook-info">
+              Jadilah yang pertama mengirim doa 🤍
+            </p>
+          )}
+
+          {messages.map((item) => (
+            <div className="guestbook-bubble" key={item.id}>
+              <span className="guestbook-sender">
+                {item.guest_name}
+              </span>
+
+              <p>{item.message}</p>
+
+              <time dateTime={item.created_at}>
+                {formatTime(item.created_at)}
+              </time>
+            </div>
+          ))}
+
+          <div ref={messagesEndRef} />
         </div>
 
         <form
@@ -73,12 +172,18 @@ export default function GuestbookSlide() {
 
             <button
               type="submit"
-              disabled
+              disabled={submitting}
               aria-label="Kirim ucapan"
             >
-              ➤
+              {submitting ? "…" : "➤"}
             </button>
           </div>
+
+          {errorMessage && (
+            <p className="guestbook-error" role="alert">
+              {errorMessage}
+            </p>
+          )}
         </form>
       </div>
     </section>
