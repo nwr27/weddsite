@@ -29,6 +29,13 @@ export default function OpeningSlide() {
       <div className="people">
         <CoupleCard person={weddingData.groom} label="Mempelai Pria" />
         <CoupleCard person={weddingData.bride} label="Mempelai Wanita" />
+
+        <img
+          className="heart-ampersand"
+          src="/decorations/heart-ampersand.png"
+          alt=""
+          aria-hidden="true"
+        />
       </div>
       <div className="opening-connector" aria-hidden="true" />
       <p className="opening-names">NANA &amp; MEYSA</p>

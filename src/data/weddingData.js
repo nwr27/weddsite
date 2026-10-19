@@ -3,7 +3,7 @@ export const weddingData = {
     name: "Nana Wartana",
     father: "Bapak Dasim (Alm.)",
     mother: "Ibu Saripah",
-    image: "/images/groom.png",
+    image: "/images/groom.jpg",
     address: "Dusun Cisahang, Desa Mekarmulya, Kec. Kertajati, Kab. Majalengka",
   },
 
@@ -11,7 +11,7 @@ export const weddingData = {
     name: "Meysa Dwi Wahyuni",
     father: "Bapak Ade Suarna",
     mother: "Ibu Elin Yulianti",
-    image: "/images/bride.png",
+    image: "/images/bride.jpg",
     address: "Dusun Caricangkas, Desa Karyamukti, Kec. Tomo, Kab. Sumedang",
   },
 

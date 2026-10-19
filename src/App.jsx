@@ -64,8 +64,17 @@ export default function App() {
           <div className="slide-body" key={slides[index]}>
             <SlideContent id={slides[index]} />
           </div>
-          <nav className="slide-nav" aria-label="Navigasi slide">
-            <span>{index + 1} / {slides.length}</span>
+          <nav className="slide-pagination" aria-label="Navigasi slide">
+            {slides.map((slide, i) => (
+              <button
+                key={slide}
+                type="button"
+                className={`pagination-dot ${index === i ? "active" : ""}`}
+                onClick={() => setIndex(i)}
+                aria-label={`Buka slide ${i + 1}`}
+                aria-current={index === i ? "step" : undefined}
+              />
+            ))}
           </nav>
         </section>
       )}

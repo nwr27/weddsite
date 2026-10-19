@@ -98,21 +98,6 @@ button:disabled {
   line-height: 1.35;
 }
 
-.slide-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  flex-shrink: 0;
-  font-family: system-ui, sans-serif;
-  font-size: 11px;
-}
-
-.slide-nav button {
-  font-size: 11px;
-  padding: 9px 8px;
-}
-
 .people {
   width: 100%;
   display: grid;
@@ -199,5 +184,103 @@ button:disabled {
     gap: 3px;
   }
 }
+
 /* Geser vertikal pada smartphone tanpa menggeser halaman browser. */
-.slide { touch-action: pan-y; overscroll-behavior: none; }
+.slide {
+  touch-action: pan-y;
+  overscroll-behavior: none;
+}
+
+/* SLIDE 1 — BACKGROUND */
+.opening-slide {
+  width: 100%;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-image: url("/images/bg-golden-langsat.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slide:has(.opening-slide) {
+  padding: 0;
+  gap: 0;
+}
+
+.slide-body:has(.opening-slide) {
+  padding: 0;
+}
+
+.slide-body:has(.opening-slide) .opening-slide {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.slide-pagination{
+  right: 10px;
+}
+
+.slide {
+  position: relative;
+}
+
+.slide-pagination {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination-dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+
+  border: none;
+  border-radius: 99px;
+  background: #cdbb9c;
+
+  opacity: 0.65;
+  transition:
+    height 0.25s ease,
+    background-color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.pagination-dot.active {
+  height: 22px;
+  background: #b68d4c;
+  opacity: 1;
+}
+
+.pagination-dot:focus-visible {
+  outline: 2px solid #59442f;
+  outline-offset: 4px;
+}
+
+.opening-slide .people {
+  position: relative;
+}
+
+.heart-ampersand {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 65px;
+  height: auto;
+  z-index: 2;
+    pointer-events: none;
+  }
