@@ -3,7 +3,20 @@ import { weddingData } from "../data/weddingData.js";
 function CoupleCard({ person, label }) {
   return (
     <article className="person">
-      <img className="person-photo" src={person.image} alt={person.name} />
+      <div className="person-photo-wrapper">
+        <img
+          className="person-photo"
+          src={person.image}
+          alt={person.name}
+        />
+
+        <img
+          className="person-photo-frame"
+          src="/decorations/portrait-frame.png"
+          alt=""
+          aria-hidden="true"
+        />
+      </div>
       <small>{label}</small>
       <h3>
         {person.name === "Nana Wartana" ? (
@@ -22,7 +35,7 @@ function CoupleCard({ person, label }) {
         </>
       ) : (
         <>
-            Putri dari {person.father} &amp; <br />{person.mother}
+          Putri dari {person.father} &amp; <br />{person.mother}
         </>
       )}</p>
       <p className="muted">{person.name === "Nana Wartana" ? (
@@ -31,7 +44,7 @@ function CoupleCard({ person, label }) {
         </>
       ) : (
         <>
-            Dusun Caricangkas,<br />Desa Karyamukti, Kec. Tomo,<br />Kab. Sumedang
+          Dusun Caricangkas,<br />Desa Karyamukti, Kec. Tomo,<br />Kab. Sumedang
         </>
       )}</p>
     </article>
@@ -42,9 +55,11 @@ export default function OpeningSlide() {
   return (
     <section className="opening-slide" aria-label="Pembuka dan profil mempelai">
       <div className="opening-top-decoration" aria-hidden="true" />
-      <div className="opening-mihrab" aria-hidden="true">
-        <div className="opening-lantern" />
-        <div className="opening-kufi" />
+      <div className="opening-kufi">
+        <img
+          src="/decorations/kufi-bismillah.png"
+          alt="Bismillahirrahmanirrahim"
+        />
       </div>
       <div className="opening-intro">
         <p>Assalamu'alaikum Wr. Wb.</p>
