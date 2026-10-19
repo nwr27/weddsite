@@ -306,6 +306,7 @@ button:disabled {
 .opening-slide .people {
   position: relative;
 }
+
 .opening-slide .person {
   padding-top: 20px;
   gap: 7px;
@@ -374,18 +375,50 @@ button:disabled {
   max-width: 340px;
   height: auto;
   object-fit: contain;
+  margin-bottom: -65px;
 }
 
-/* SLIDE 2 — TERJEMAHAN AYAT */
+/* =================================
+   SLIDE 2 — AYAT SUCI
+================================= */
 
+/* Container utama */
 .verse-slide {
-  gap: 28px;
-  padding: 24px 18px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 20px 10px;
 }
 
+/* Kaligrafi Kufi */
+.verse-kufi {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: -65px;
+}
+
+/* Ornamen pemisah */
+.verse-divider {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Terjemahan */
 .verse-translation {
   max-width: 340px;
   text-align: center;
+  margin-top: -20px;
 }
 
 .verse-translation p {
@@ -395,6 +428,7 @@ button:disabled {
   color: #59442f;
 }
 
+/* Referensi ayat */
 .verse-translation span {
   display: block;
   margin-top: 16px;

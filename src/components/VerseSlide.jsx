@@ -7,6 +7,13 @@ export default function VerseSlide() {
         alt="Kaligrafi QS. Ar-Rum ayat 21"
       />
 
+      <img
+        className="verse-divider"
+        src="/decorations/gold-divider.png"
+        alt=""
+        aria-hidden="true"
+      />
+
       <div className="verse-translation">
         <p>
           “Dan di antara tanda-tanda (kebesaran)-Nya ialah bahwa
