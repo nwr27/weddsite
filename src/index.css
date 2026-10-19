@@ -68,19 +68,6 @@ button:disabled {
   gap: var(--content-gap);
 }
 
-.slide-header,
-.slide-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  flex-shrink: 0;
-}
-
-.slide-header {
-  font-size: 12px;
-}
-
 .slide-body {
   flex: 1;
   min-height: 0;
@@ -111,6 +98,11 @@ button:disabled {
 }
 
 .slide-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-shrink: 0;
   font-family: system-ui, sans-serif;
   font-size: 11px;
 }
