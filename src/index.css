@@ -1646,3 +1646,28 @@ button:disabled {
 .guestbook-composer {
   flex-shrink: 0;
 }
+
+/* ==========================================
+   GUESTBOOK — PESAN MILIK PENGIRIM
+========================================== */
+
+.guestbook-messages .guestbook-bubble-own {
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 0;
+
+  background: #005c4b;
+  border-radius: 10px 0 10px 10px;
+}
+
+.guestbook-bubble-own .guestbook-sender {
+  color: #d6b77a;
+}
+
+.guestbook-bubble-own p {
+  color: #e9edef;
+}
+
+.guestbook-bubble-own time {
+  color: #b3c9c2;
+}

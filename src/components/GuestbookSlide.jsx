@@ -9,6 +9,7 @@ export default function GuestbookSlide() {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [ownMessageIds, setOwnMessageIds] = useState([]);
 
   const messagesEndRef = useRef(null);
 
@@ -61,14 +62,23 @@ export default function GuestbookSlide() {
     setErrorMessage("");
 
     try {
-      const { error } = await supabase
+
+      const { data: sentMessage, error } = await supabase
         .from("guestbook")
         .insert({
           guest_name: name,
           message: wish,
-        });
+        })
+        .select("id")
+        .single();
 
       if (error) throw error;
+
+      setOwnMessageIds((current) => [
+        ...current,
+        sentMessage.id,
+      ]);
+
 
       const { data, error: loadError } = await supabase
         .from("guestbook")
@@ -127,7 +137,15 @@ export default function GuestbookSlide() {
           )}
 
           {messages.map((item) => (
-            <div className="guestbook-bubble" key={item.id}>
+
+            <div
+              className={`guestbook-bubble ${ownMessageIds.includes(item.id)
+                ? "guestbook-bubble-own"
+                : ""
+                }`}
+              key={item.id}
+            >
+
               <span className="guestbook-sender">
                 {item.guest_name}
               </span>

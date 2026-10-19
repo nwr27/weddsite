@@ -41,17 +41,9 @@ export default function GiftSlide() {
                   alt={`Logo ${gift.type}`}
                   className="gift-logo"
                 />
-
-                <span className="gift-type">
-                  {gift.type}
-                </span>
               </div>
 
               <div className="gift-card-body">
-                <span className="gift-label">
-                  NOMOR REKENING / AKUN
-                </span>
-
                 <strong className="gift-number">
                   {gift.number}
                 </strong>
