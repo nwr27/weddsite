@@ -54,29 +54,49 @@ export default function App() {
     );
   };
 
+
   const handleTouchStart = (event) => {
+    // Swipe dari dalam room chat tidak boleh memindahkan slide.
+    if (event.target.closest(".guestbook-messages")) {
+      touchStart.current = null;
+      return;
+    }
+
     touchStart.current = {
       x: event.touches[0].clientX,
       y: event.touches[0].clientY,
     };
   };
 
+
+
   const handleTouchEnd = (event) => {
     if (!touchStart.current) return;
 
     const deltaY =
       event.changedTouches[0].clientY - touchStart.current.y;
+
     const deltaX =
       event.changedTouches[0].clientX - touchStart.current.x;
 
     touchStart.current = null;
 
-    if (Math.abs(deltaY) > 55 && Math.abs(deltaY) > Math.abs(deltaX)) {
+    if (
+      Math.abs(deltaY) > 55 &&
+      Math.abs(deltaY) > Math.abs(deltaX)
+    ) {
       go(deltaY < 0 ? 1 : -1);
     }
   };
 
+
+
   const handleWheel = (event) => {
+    // Scroll mouse/trackpad di room chat hanya menggulir pesan.
+    if (event.target.closest(".guestbook-messages")) {
+      return;
+    }
+
     if (Math.abs(event.deltaY) < 12) return;
 
     const now = Date.now();
@@ -85,6 +105,7 @@ export default function App() {
     lastWheel.current = now;
     go(event.deltaY > 0 ? 1 : -1);
   };
+
 
   return (
     <main className="site">

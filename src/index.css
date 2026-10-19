@@ -14,7 +14,9 @@
 }
 
 html,
+
 body,
+
 #root {
   margin: 0;
   min-height: 100%;
@@ -25,6 +27,7 @@ body {
 }
 
 button,
+
 a {
   font: inherit;
 }
@@ -44,12 +47,12 @@ button:disabled {
 }
 
 .site {
-  height: 100vh;
   height: 100dvh;
   width: 100%;
 }
 
 .welcome,
+
 .slide {
   height: 100%;
   display: flex;
@@ -124,9 +127,10 @@ button:disabled {
 }
 
 /* =================================
-   SLIDE 1 — FRAME FOTO MEMPELAI
-================================= */
 
+   SLIDE 1 — FRAME FOTO MEMPELAI
+
+================================= */
 .person-photo-wrapper {
   position: relative;
   width: var(--photo-size);
@@ -146,18 +150,16 @@ button:disabled {
   position: absolute;
   top: 50%;
   left: 48%;
-
   width: 120%;
   height: 120%;
-
   transform: translate(-50%, -50%);
   object-fit: contain;
-
   z-index: 2;
   pointer-events: none;
 }
 
 .person h3,
+
 .person p {
   margin: 0;
 }
@@ -172,6 +174,7 @@ button:disabled {
 }
 
 .person small,
+
 .muted {
   color: #927a5b;
 }
@@ -217,6 +220,7 @@ button:disabled {
     padding: 7px 5px;
     gap: 3px;
   }
+
 }
 
 /* Geser vertikal pada smartphone tanpa menggeser halaman browser. */
@@ -230,11 +234,9 @@ button:disabled {
   position: relative;
   width: 100%;
   min-height: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   background-image: url("/images/bg-golden-langsat.webp");
   background-size: cover;
   background-position: center;
@@ -255,10 +257,6 @@ button:disabled {
   padding-right: 20px;
 }
 
-.slide-pagination {
-  right: 10px;
-}
-
 .slide {
   position: relative;
 }
@@ -269,7 +267,6 @@ button:disabled {
   right: 8px;
   transform: translateY(-50%);
   z-index: 10;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -280,15 +277,14 @@ button:disabled {
   width: 6px;
   height: 6px;
   padding: 0;
-
   border: none;
   border-radius: 99px;
   background: #cdbb9c;
-
   opacity: 0.65;
-  transition:
-    height 0.25s ease,
+  transition: height 0.25s ease,
+
     background-color 0.25s ease,
+
     opacity 0.25s ease;
 }
 
@@ -318,11 +314,9 @@ button:disabled {
 
 .heart-ampersand {
   position: absolute;
-
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   width: 55px;
   height: auto;
   z-index: 2;
@@ -334,7 +328,6 @@ button:disabled {
   top: 45px;
   left: 50%;
   transform: translateX(-50%);
-
   width: 85px;
   z-index: 3;
   pointer-events: none;
@@ -355,33 +348,14 @@ button:disabled {
   .slide-pagination {
     right: 8px;
   }
+
 }
 
 /* =================================
-   SLIDE 2 — KALIGRAFI KUFI
-================================= */
 
-.verse-slide {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.verse-kufi {
-  display: block;
-  width: 100%;
-  max-width: 340px;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: -65px;
-}
-
-/* =================================
    SLIDE 2 — AYAT SUCI
-================================= */
 
+================================= */
 /* Container utama */
 .verse-slide {
   width: 100%;
@@ -438,21 +412,24 @@ button:disabled {
 }
 
 /* =================================
-   SLIDE 3 — COUNTDOWN
-================================= */
 
+   SLIDE 3 — COUNTDOWN
+
+================================= */
 .countdown-slide {
   width: 100%;
   min-height: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 6px;
-
   padding: 24px 30px;
   text-align: center;
+  background-image: url("/images/bg-countdown.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .countdown-heading {
@@ -488,19 +465,6 @@ button:disabled {
   max-width: 340px;
 }
 
-.countdown-unit {
-  min-width: 0;
-  padding: 16px 4px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-
-  border: 1px solid #d6bc87;
-  border-radius: 10px;
-}
-
 .countdown-unit strong {
   font-size: clamp(20px, 5vw, 28px);
   font-weight: bold;
@@ -522,7 +486,6 @@ button:disabled {
 }
 
 /* SLIDE 3 — BACKGROUND DAN BINGKAI */
-
 .slide:has(.countdown-slide) {
   padding: 0;
   gap: 0;
@@ -532,26 +495,17 @@ button:disabled {
   padding: 0;
 }
 
-.countdown-slide {
-  min-height: 100%;
-  width: 100%;
-  padding: 24px 32px;
-
-  background-image: url("/images/bg-countdown.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .countdown-unit {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   aspect-ratio: 2 / 3;
   padding: 12px 3px;
-
   border: none;
   border-radius: 0;
   background: url("/decorations/countdown-frame.png") center / 100% 100% no-repeat;
-
   justify-content: center;
   gap: 5px;
 }
@@ -570,7 +524,9 @@ button:disabled {
 }
 
 /* =================================
+
    SLIDE 4 — ROYAL JAPANESE ISLAMIC NIGHT
+
 ================================= */
 .slide:has(.event-slide) {
   padding: 0;
@@ -619,6 +575,7 @@ button:disabled {
 }
 
 .event-eyebrow,
+
 .event-location>span {
   font-family: system-ui, sans-serif;
   font-size: 9px;
@@ -749,12 +706,14 @@ button:disabled {
     margin: 4px 0;
     font-size: 19px;
   }
+
 }
 
 /* =================================
-   SLIDE 5 — OUR GALLERY
-================================= */
 
+   SLIDE 5 — OUR GALLERY
+
+================================= */
 .slide:has(.gallery-slide) {
   padding: 0;
   gap: 0;
@@ -768,11 +727,9 @@ button:disabled {
   width: 100%;
   min-height: 100%;
   padding: 36px 34px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: #211b18;
   color: #f0dfc0;
 }
@@ -780,12 +737,10 @@ button:disabled {
 .gallery-inner {
   width: 100%;
   max-width: 360px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-
   text-align: center;
 }
 
@@ -875,35 +830,31 @@ button:disabled {
   .gallery-photo-main img {
     aspect-ratio: 16 / 8;
   }
+
 }
 
 /* =================================
-   GLOBAL MUSIC CONTROL
-================================= */
 
+   GLOBAL MUSIC CONTROL
+
+================================= */
 .music-toggle {
   position: absolute;
   top: 20px;
   right: 18px;
   z-index: 30;
-
   width: 36px;
   height: 36px;
   padding: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border: 1px solid rgba(182, 141, 76, 0.75);
   border-radius: 50%;
-
   background: rgba(37, 30, 25, 0.78);
   color: #e8d6b6;
-
   font-size: 15px;
   line-height: 1;
-
   cursor: pointer;
   touch-action: manipulation;
 }
@@ -914,10 +865,12 @@ button:disabled {
 }
 
 /* ==========================================
-   SLIDE 6 — RSVP
-   Royal Japanese Islamic Night
-========================================== */
 
+   SLIDE 6 — RSVP
+
+   Royal Japanese Islamic Night
+
+========================================== */
 /* Slide 6 — Full bleed, tanpa border luar */
 .slide:has(.rsvp-content) {
   padding: 0;
@@ -933,18 +886,18 @@ button:disabled {
   width: 100%;
   min-height: 100%;
   padding: 38px 24px 80px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 22px;
-
   color: #eee0c8;
-  background:
-    radial-gradient(ellipse at 50% 0%,
+  background: radial-gradient(ellipse at 50% 0%,
+
       rgba(153, 113, 59, 0.14),
+
       transparent 65%),
+
     #211b18;
 }
 
@@ -981,19 +934,17 @@ button:disabled {
   width: 100%;
   max-width: 420px;
   padding: 25px 21px;
-
   display: flex;
   flex-direction: column;
   gap: 13px;
-
   border: 1px solid rgba(194, 151, 87, 0.48);
   border-radius: 12px;
-
   background: rgba(48, 39, 32, 0.88);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
 }
 
 .rsvp-form>label,
+
 .rsvp-attendance legend {
   color: #e6cfaa;
   font-size: 12px;
@@ -1002,16 +953,15 @@ button:disabled {
 }
 
 .rsvp-form>input,
+
 .rsvp-form>select {
   box-sizing: border-box;
   width: 100%;
   min-height: 44px;
   padding: 11px 13px;
-
   border: 1px solid rgba(194, 151, 87, 0.35);
   border-radius: 7px;
   outline: none;
-
   background: #241e1a;
   color: #f0e1c9;
   font: inherit;
@@ -1023,6 +973,7 @@ button:disabled {
 }
 
 .rsvp-form>input:focus,
+
 .rsvp-form>select:focus {
   border-color: #d5af70;
 }
@@ -1031,11 +982,9 @@ button:disabled {
   min-width: 0;
   margin: 3px 0;
   padding: 0;
-
   display: flex;
   flex-direction: column;
   gap: 12px;
-
   border: 0;
 }
 
@@ -1048,7 +997,6 @@ button:disabled {
   display: flex;
   align-items: center;
   gap: 10px;
-
   color: #e4d3b9;
   font-size: 12px;
   cursor: pointer;
@@ -1065,18 +1013,14 @@ button:disabled {
   min-height: 45px;
   margin-top: 9px;
   padding: 11px 15px;
-
   border: 0;
   border-radius: 7px;
-
   background: #c9a15c;
   color: #241b15;
-
   font: inherit;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.4px;
-
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -1121,18 +1065,21 @@ button:disabled {
   .rsvp-header h2 {
     font-size: 36px;
   }
+
 }
 
 @media (max-height: 700px) {
   .rsvp-content {
     justify-content: flex-start;
   }
+
 }
 
 /* ==========================================
-   SLIDE 6 — WHATSAPP STYLE GUESTBOOK
-========================================== */
 
+   SLIDE 6 — WHATSAPP STYLE GUESTBOOK
+
+========================================== */
 .slide:has(.guestbook-slide) {
   padding: 0;
   gap: 0;
@@ -1318,6 +1265,7 @@ button:disabled {
 }
 
 .guestbook-composer input::placeholder,
+
 .guestbook-composer textarea::placeholder {
   color: #aebac1;
 }
@@ -1359,13 +1307,16 @@ button:disabled {
   .guestbook-composer {
     padding: 10px;
   }
+
 }
 
 /* ==========================================
-   SLIDE 8 — WEDDING GIFT
-   Light Champagne Gold
-========================================== */
 
+   SLIDE 8 — WEDDING GIFT
+
+   Light Champagne Gold
+
+========================================== */
 /* Full bleed — menghilangkan padding luar */
 .slide:has(.gift-slide) {
   padding: 0;
@@ -1378,31 +1329,23 @@ button:disabled {
 
 .gift-slide {
   width: 100%;
-  min-height: 100%;
-  padding: 32px 34px 50px;
-
   display: flex;
-  align-items: center;
-  justify-content: center;
+  background: radial-gradient(ellipse at 50% 0%,
 
-  background:
-    radial-gradient(ellipse at 50% 0%,
       rgba(224, 190, 131, 0.22),
-      transparent 65%),
-    #f9f4ea;
 
+      transparent 65%),
+
+    #f9f4ea;
   color: #59442f;
 }
 
 .gift-inner {
   width: 100%;
   max-width: 380px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-
   text-align: center;
 }
 
@@ -1410,20 +1353,16 @@ button:disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
 }
 
 .gift-heading>span {
   color: #b68d4c;
   font-family: system-ui, sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.22em;
 }
 
 .gift-heading h1 {
   margin: 0;
   color: #59442f;
-  font-size: clamp(26px, 7vw, 34px);
   font-weight: normal;
 }
 
@@ -1431,71 +1370,53 @@ button:disabled {
   max-width: 270px;
   margin: 0;
   color: #927a5b;
-  font-size: 12px;
-  line-height: 1.6;
 }
 
 .gift-list {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .gift-card {
   width: 100%;
-  padding: 14px 16px;
-
   display: flex;
   flex-direction: column;
-  gap: 10px;
-
   border: 1px solid #decba9;
-  border-radius: 10px;
-
   background: rgba(255, 252, 246, 0.92);
   box-shadow: 0 4px 16px rgba(89, 68, 47, 0.05);
-
   text-align: left;
 }
 
 .gift-card-header {
   display: flex;
   align-items: center;
-  gap: 9px;
 }
 
 .gift-logo {
   display: block;
-  width: 45px;
-  height: 24px;
   object-fit: contain;
 }
 
 .gift-type {
   color: #59442f;
-  font-size: 13px;
   font-weight: bold;
 }
 
 .gift-card-body {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
 .gift-label,
+
 .gift-owner>span {
   color: #927a5b;
   font-family: system-ui, sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.08em;
 }
 
 .gift-number {
   color: #59442f;
-  font-size: clamp(15px, 4.5vw, 19px);
-  letter-spacing: 0.04em;
   overflow-wrap: anywhere;
 }
 
@@ -1503,35 +1424,25 @@ button:disabled {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
 }
 
 .gift-owner {
   display: flex;
   flex-direction: column;
-  gap: 4px;
   min-width: 0;
 }
 
 .gift-owner strong {
   color: #59442f;
-  font-size: 12px;
   font-weight: 600;
 }
 
 .gift-copy-button {
   flex-shrink: 0;
-  min-width: 72px;
-  min-height: 35px;
-  padding: 8px 10px;
-
   border: 0;
   border-radius: 6px;
-
   background: #b68d4c;
   color: #fffaf0;
-
-  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -1545,8 +1456,6 @@ button:disabled {
   max-width: 280px;
   margin: 0;
   color: #927a5b;
-  font-size: 11px;
-  line-height: 1.6;
 }
 
 @media (max-width: 380px) {
@@ -1566,18 +1475,21 @@ button:disabled {
     padding: 11px 13px;
     gap: 8px;
   }
+
 }
 
 @media (max-height: 700px) {
   .gift-slide {
     justify-content: flex-start;
   }
+
 }
 
 /* ==========================================
-   SLIDE 8 — COMPACT MOBILE LAYOUT
-========================================== */
 
+   SLIDE 8 — COMPACT MOBILE LAYOUT
+
+========================================== */
 .slide-body:has(.gift-slide) {
   justify-content: flex-start;
   align-items: stretch;
@@ -1643,6 +1555,7 @@ button:disabled {
 }
 
 .gift-label,
+
 .gift-owner>span {
   font-size: 7px;
   letter-spacing: 0.04em;
@@ -1692,4 +1605,44 @@ button:disabled {
     padding: 8px 10px;
     gap: 4px;
   }
+}
+
+/* ==========================================
+   WEDDING WISHES — CHAT SCROLL AREA
+========================================== */
+
+.slide-body:has(.guestbook-slide) {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.guestbook-slide {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.guestbook-chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Hanya daftar pesan yang dapat di-scroll */
+.guestbook-messages {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+
+/* Header dan input tidak ikut bergerak */
+.guestbook-header,
+.guestbook-composer {
+  flex-shrink: 0;
 }
