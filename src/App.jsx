@@ -129,6 +129,18 @@ export default function App() {
             <SlideContent id={slides[index]} />
           </div>
 
+          {slides[index] === "guestbook" && (
+            <button
+              type="button"
+              className="guestbook-next"
+              onClick={() => go(1)}
+              aria-label="Lanjut ke halaman RSVP"
+            >
+              <span>Lanjut ke RSVP</span>
+              <span aria-hidden="true">↓</span>
+            </button>
+          )}
+
           <button
             type="button"
             className="music-toggle"
