@@ -6,12 +6,12 @@ const TRACKS = [
   "gentle-hands.mp3",
   "nindo.mp3",
   "samidare.mp3",
+  "payung-teduh.mp3"
 ];
 
-const MAX_SECONDS = 60;
 const FADE_MS = 1200;
 const EVENT_INDEX = 3;
-const GENTLE_INDEX = TRACKS.indexOf("gentle-hands.mp3");
+const GENTLE_INDEX = TRACKS.indexOf("payung-teduh.mp3");
 
 class MusicManager {
   constructor() {
@@ -30,9 +30,6 @@ class MusicManager {
     audio.preload = "auto";
     audio.loop = false;
     audio.volume = 1;
-    audio.addEventListener("timeupdate", () => {
-      if (audio.currentTime >= MAX_SECONDS) this.nextTrack();
-    });
     audio.addEventListener("ended", () => this.nextTrack());
     this.audio = audio;
     return audio;
