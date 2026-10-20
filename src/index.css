@@ -1739,3 +1739,148 @@ button:disabled {
 .guestbook-bubble-own time {
   color: #b3c9c2;
 }
+
+/* ==========================================
+   SLIDE 9 — OUR LOVE STORY
+   Illustrated Storybook
+========================================== */
+
+.slide:has(.story-slide) {
+  padding: 0;
+  gap: 0;
+}
+
+.slide-body:has(.story-slide) {
+  display: block;
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.story-slide {
+  width: 100%;
+  min-height: 100%;
+  padding: 64px 32px 48px;
+
+  background:
+    radial-gradient(ellipse at 50% 25%,
+      rgba(226, 196, 144, 0.24),
+      transparent 70%),
+    linear-gradient(145deg,
+      #f4e9d6,
+      #fcf8f0 45%,
+      #f2e5d1);
+
+  color: #59442f;
+}
+
+.story-inner {
+  width: 100%;
+  max-width: 540px;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.story-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.story-heading span {
+  color: #b68d4c;
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+}
+
+.story-heading h1 {
+  margin: 0;
+  color: #59442f;
+  font-size: clamp(30px, 6vw, 40px);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.story-heading p {
+  margin: 0;
+  color: #927a5b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.story-illustration {
+  width: 100%;
+  margin: 0;
+  padding: 7px;
+
+  border: 1px solid #decba9;
+  border-radius: 16px;
+  background: rgba(255, 252, 246, 0.8);
+
+  box-shadow: 0 12px 35px rgba(89, 68, 47, 0.1);
+}
+
+.story-illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.story-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+
+.story-ornament {
+  color: #b68d4c;
+  font-size: 20px;
+}
+
+.story-footer p {
+  margin: 0;
+  color: #927a5b;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.story-footer strong {
+  color: #b68d4c;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+/* Smartphone */
+@media (max-width: 480px) {
+  .story-slide {
+    padding: 40px 20px 30px;
+  }
+
+  .story-inner {
+    gap: 8px;
+  }
+
+  .story-heading h1 {
+    font-size: 32px;
+  }
+
+  .story-illustration {
+    padding: 0px;
+    border-radius: 8px;
+  }
+
+  .story-illustration img {
+    border-radius: 8px;
+  }
+}

@@ -8,8 +8,8 @@ const TRACKS = [
   "samidare.mp3",
 ];
 
-const MAX_SECONDS = 30;
-const FADE_MS = 800;
+const MAX_SECONDS = 60;
+const FADE_MS = 1200;
 const EVENT_INDEX = 3;
 const GENTLE_INDEX = TRACKS.indexOf("gentle-hands.mp3");
 
