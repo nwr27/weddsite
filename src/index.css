@@ -1710,6 +1710,63 @@ button:disabled {
   }
 }
 
+@media (min-width: 769px) {
+  .slide:has(.story-slide) {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .slide-body:has(.story-slide) {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .story-slide {
+    height: 100%;
+    min-height: 0;
+    box-sizing: border-box;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .story-inner {
+    max-width: 540px;
+    gap: 12px;
+  }
+
+  .story-heading {
+    gap: 3px;
+  }
+
+  .story-heading h1 {
+    font-size: 34px;
+  }
+
+  .story-illustration {
+    width: auto;
+    max-width: 100%;
+    padding: 6px;
+  }
+
+  .story-illustration img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: min(62dvh, 580px);
+    object-fit: contain;
+  }
+
+  .story-footer {
+    gap: 0;
+  }
+
+  .story-ornament {
+    font-size: 16px;
+  }
+}
+
 /* ==========================================
    SLIDE 10 — CLOSING
    Romantic Ivory & Champagne Gold
