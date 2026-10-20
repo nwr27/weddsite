@@ -132,6 +132,17 @@ export default function App() {
           {slides[index] === "guestbook" && (
             <button
               type="button"
+              className="guestbook-previous"
+              onClick={() => go(-1)}
+              aria-label="Kembali ke halaman Gallery"
+            >
+              <span aria-hidden="true">↑</span>
+              <span>Kembali ke Gallery</span>
+            </button>
+          )}
+          {slides[index] === "guestbook" && (
+            <button
+              type="button"
               className="guestbook-next"
               onClick={() => go(1)}
               aria-label="Lanjut ke halaman RSVP"

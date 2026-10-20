@@ -1271,6 +1271,61 @@ button:disabled {
 }
 
 /* ==========================================
+   GUESTBOOK — PREVIOUS NAVIGATION
+========================================== */
+
+.slide:has(.guestbook-slide) {
+  position: relative;
+  background: #19262d;
+  overflow: hidden;
+}
+
+.guestbook-previous {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+
+  width: 100%;
+  min-height: 38px;
+  padding: 9px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 0;
+  background: #19262d;
+  color: #d5ae6a;
+
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+
+  cursor: pointer;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+}
+
+.guestbook-previous:active {
+  background: #263941;
+}
+
+.guestbook-previous:focus-visible {
+  outline: 2px solid #d5ae6a;
+  outline-offset: -3px;
+}
+
+/* Sisakan ruang untuk tombol di atas */
+.slide:has(.guestbook-slide) .slide-body {
+  padding-top: 38px;
+}
+
+/* ==========================================
    SLIDE 8 — WEDDING GIFT
    Light Champagne Gold
 ========================================== */
@@ -1559,6 +1614,9 @@ button:disabled {
   font: 600 12px system-ui, sans-serif;
   letter-spacing: 0.05em;
   cursor: pointer;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
 }
 
 .guestbook-next span:last-child {
