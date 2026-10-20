@@ -8,6 +8,7 @@ import GuestbookSlide from "./GuestbookSlide.jsx";
 import RSVPSlide from "./RSVPSlide.jsx";
 import GiftSlide from "./GiftSlide.jsx";
 import StorySlide from "./StorySlide.jsx";
+import ClosingSlide from "./ClosingSlide.jsx";
 
 export default function SlideContent({ id }) {
   switch (id) {
@@ -20,7 +21,7 @@ export default function SlideContent({ id }) {
     case "rsvp": return <RSVPSlide />;
     case "gift": return <GiftSlide />;
     case "story": return <StorySlide />;
-    case "closing": return <><h1>Terima Kasih</h1></>;
+    case "closing": return <ClosingSlide />;
     default: return null;
   }
 }
