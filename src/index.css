@@ -14,9 +14,7 @@
 }
 
 html,
-
 body,
-
 #root {
   margin: 0;
   min-height: 100%;
@@ -27,7 +25,6 @@ body {
 }
 
 button,
-
 a {
   font: inherit;
 }
@@ -52,7 +49,6 @@ button:disabled {
 }
 
 .welcome,
-
 .slide {
   height: 100%;
   display: flex;
@@ -127,9 +123,7 @@ button:disabled {
 }
 
 /* =================================
-
    SLIDE 1 — FRAME FOTO MEMPELAI
-
 ================================= */
 .person-photo-wrapper {
   position: relative;
@@ -159,7 +153,6 @@ button:disabled {
 }
 
 .person h3,
-
 .person p {
   margin: 0;
 }
@@ -174,7 +167,6 @@ button:disabled {
 }
 
 .person small,
-
 .muted {
   color: #927a5b;
 }
@@ -220,7 +212,6 @@ button:disabled {
     padding: 7px 5px;
     gap: 3px;
   }
-
 }
 
 /* Geser vertikal pada smartphone tanpa menggeser halaman browser. */
@@ -282,9 +273,7 @@ button:disabled {
   background: #cdbb9c;
   opacity: 0.65;
   transition: height 0.25s ease,
-
     background-color 0.25s ease,
-
     opacity 0.25s ease;
 }
 
@@ -348,13 +337,10 @@ button:disabled {
   .slide-pagination {
     right: 8px;
   }
-
 }
 
 /* =================================
-
    SLIDE 2 — AYAT SUCI
-
 ================================= */
 /* Container utama */
 .verse-slide {
@@ -412,9 +398,7 @@ button:disabled {
 }
 
 /* =================================
-
    SLIDE 3 — COUNTDOWN
-
 ================================= */
 .countdown-slide {
   width: 100%;
@@ -524,9 +508,7 @@ button:disabled {
 }
 
 /* =================================
-
    SLIDE 4 — ROYAL JAPANESE ISLAMIC NIGHT
-
 ================================= */
 .slide:has(.event-slide) {
   padding: 0;
@@ -575,7 +557,6 @@ button:disabled {
 }
 
 .event-eyebrow,
-
 .event-location>span {
   font-family: system-ui, sans-serif;
   font-size: 9px;
@@ -706,13 +687,10 @@ button:disabled {
     margin: 4px 0;
     font-size: 19px;
   }
-
 }
 
 /* =================================
-
    SLIDE 5 — OUR GALLERY
-
 ================================= */
 .slide:has(.gallery-slide) {
   padding: 0;
@@ -830,13 +808,10 @@ button:disabled {
   .gallery-photo-main img {
     aspect-ratio: 16 / 8;
   }
-
 }
 
 /* =================================
-
    GLOBAL MUSIC CONTROL
-
 ================================= */
 .music-toggle {
   position: absolute;
@@ -865,11 +840,8 @@ button:disabled {
 }
 
 /* ==========================================
-
    SLIDE 6 — RSVP
-
    Royal Japanese Islamic Night
-
 ========================================== */
 /* Slide 6 — Full bleed, tanpa border luar */
 .slide:has(.rsvp-content) {
@@ -893,11 +865,8 @@ button:disabled {
   gap: 22px;
   color: #eee0c8;
   background: radial-gradient(ellipse at 50% 0%,
-
       rgba(153, 113, 59, 0.14),
-
       transparent 65%),
-
     #211b18;
 }
 
@@ -944,7 +913,6 @@ button:disabled {
 }
 
 .rsvp-form>label,
-
 .rsvp-attendance legend {
   color: #e6cfaa;
   font-size: 12px;
@@ -953,7 +921,6 @@ button:disabled {
 }
 
 .rsvp-form>input,
-
 .rsvp-form>select {
   box-sizing: border-box;
   width: 100%;
@@ -973,7 +940,6 @@ button:disabled {
 }
 
 .rsvp-form>input:focus,
-
 .rsvp-form>select:focus {
   border-color: #d5af70;
 }
@@ -1065,20 +1031,16 @@ button:disabled {
   .rsvp-header h2 {
     font-size: 36px;
   }
-
 }
 
 @media (max-height: 700px) {
   .rsvp-content {
     justify-content: flex-start;
   }
-
 }
 
 /* ==========================================
-
    SLIDE 6 — WHATSAPP STYLE GUESTBOOK
-
 ========================================== */
 .slide:has(.guestbook-slide) {
   padding: 0;
@@ -1265,7 +1227,6 @@ button:disabled {
 }
 
 .guestbook-composer input::placeholder,
-
 .guestbook-composer textarea::placeholder {
   color: #aebac1;
 }
@@ -1307,175 +1268,12 @@ button:disabled {
   .guestbook-composer {
     padding: 10px;
   }
-
-}
-
-/* ==========================================
-
-   SLIDE 8 — WEDDING GIFT
-
-   Light Champagne Gold
-
-========================================== */
-/* Full bleed — menghilangkan padding luar */
-.slide:has(.gift-slide) {
-  padding: 0;
-  gap: 0;
-}
-
-.slide-body:has(.gift-slide) {
-  padding: 0;
-}
-
-.gift-slide {
-  width: 100%;
-  display: flex;
-  background:
-    radial-gradient(ellipse at 50% 45%,
-      rgba(226, 196, 144, 0.30) 0%,
-      rgba(249, 244, 234, 0.35) 42%,
-      transparent 75%),
-    linear-gradient(135deg,
-      #f4e9d6 0%,
-      #fcf8f0 35%,
-      #f6eddf 70%,
-      #ead8bb 100%);
-
-  color: #59442f;
-}
-
-.gift-inner {
-  width: 100%;
-  max-width: 380px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.gift-heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.gift-heading>span {
-  color: #b68d4c;
-  font-family: system-ui, sans-serif;
-}
-
-.gift-heading h1 {
-  margin: 0;
-  color: #59442f;
-  font-weight: normal;
-}
-
-.gift-heading p {
-  max-width: 270px;
-  margin: 0;
-  color: #927a5b;
-}
-
-.gift-list {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.gift-card {
-  width: 100%;
-  border: 1px solid #decba9;
-  background: rgba(255, 252, 246, 0.92);
-  box-shadow: 0 4px 16px rgba(89, 68, 47, 0.05);
-  text-align: left;
-}
-
-.gift-logo {
-  display: block;
-  object-fit: contain;
-  object-position: right center;
-}
-
-.gift-label,
-
-.gift-owner>span {
-  color: #927a5b;
-  font-family: system-ui, sans-serif;
-}
-
-.gift-number {
-  color: #59442f;
-  overflow-wrap: anywhere;
-}
-
-.gift-owner {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.gift-owner strong {
-  color: #59442f;
-  font-weight: 600;
-}
-
-.gift-copy-button {
-  width: 76px;
-  min-height: 32px;
-  padding: 6px 8px;
-  font-size: 11px;
-
-  border: 0;
-  border-radius: 6px;
-  background: #b68d4c;
-  color: #fffaf0;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.gift-copy-button:focus-visible {
-  outline: 2px solid #59442f;
-  outline-offset: 3px;
-}
-
-.gift-closing {
-  max-width: 280px;
-  margin: 0;
-  color: #927a5b;
-}
-
-@media (max-width: 380px) {
-  .gift-list {
-    gap: 8px;
-  }
-
-  .gift-slide {
-    padding: 16px 28px 20px;
-  }
-
-  .gift-inner {
-    gap: 9px;
-  }
-
-  .gift-card {
-    padding: 8px 10px;
-    gap: 4px;
-  }
-
-}
-
-@media (max-height: 700px) {
-  .gift-slide {
-    justify-content: flex-start;
-  }
-
 }
 
 /* ==========================================
    SLIDE 8 — WEDDING GIFT
    Light Champagne Gold
 ========================================== */
-
 .slide:has(.gift-slide) {
   padding: 0;
   gap: 0;
@@ -1490,18 +1288,24 @@ button:disabled {
 .gift-slide {
   min-height: 100%;
   height: auto;
-  /* padding: 18px 34px 24px; */
+  background: radial-gradient(ellipse at 50% 45%,
+      rgba(226, 196, 144, 0.30) 0%,
+      rgba(249, 244, 234, 0.35) 42%,
+      transparent 75%),
+    linear-gradient(135deg,
+      #f4e9d6 0%,
+      #fcf8f0 35%,
+      #f6eddf 70%,
+      #ead8bb 100%);
+  color: #59442f;
   padding: 65px 34px;
-
   justify-content: center;
   align-items: center;
-
 }
 
 .gift-inner {
   width: 100%;
   max-width: 380px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1554,14 +1358,11 @@ button:disabled {
   grid-template-columns: minmax(0, 1fr) 76px;
   align-items: stretch;
   column-gap: 10px;
-
   padding: 12px;
   border: 1px solid #decba9;
   border-radius: 8px;
-
   background: rgba(255, 252, 246, 0.92);
   box-shadow: 0 4px 16px rgba(89, 68, 47, 0.05);
-
   text-align: left;
 }
 
@@ -1624,13 +1425,10 @@ button:disabled {
   min-width: 62px;
   min-height: 30px;
   padding: 6px 9px;
-
   border: 0;
   border-radius: 6px;
-
   background: #b68d4c;
   color: #fffaf0;
-
   font-size: 10px;
   font-weight: 600;
   cursor: pointer;
@@ -1678,7 +1476,6 @@ button:disabled {
 /* ==========================================
    WEDDING WISHES — CHAT SCROLL AREA
 ========================================== */
-
 .slide-body:has(.guestbook-slide) {
   min-height: 0;
   overflow: hidden;
@@ -1718,12 +1515,10 @@ button:disabled {
 /* ==========================================
    GUESTBOOK — PESAN MILIK PENGIRIM
 ========================================== */
-
 .guestbook-messages .guestbook-bubble-own {
   align-self: flex-end;
   margin-left: auto;
   margin-right: 0;
-
   background: #005c4b;
   border-radius: 10px 0 10px 10px;
 }
@@ -1744,7 +1539,6 @@ button:disabled {
    SLIDE 9 — OUR LOVE STORY
    Illustrated Storybook
 ========================================== */
-
 .slide:has(.story-slide) {
   padding: 0;
   gap: 0;
@@ -1761,7 +1555,6 @@ button:disabled {
   width: 100%;
   min-height: 100%;
   padding: 64px 32px 48px;
-
   background:
     radial-gradient(ellipse at 50% 25%,
       rgba(226, 196, 144, 0.24),
@@ -1770,7 +1563,6 @@ button:disabled {
       #f4e9d6,
       #fcf8f0 45%,
       #f2e5d1);
-
   color: #59442f;
 }
 
@@ -1778,7 +1570,6 @@ button:disabled {
   width: 100%;
   max-width: 540px;
   margin-inline: auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1819,11 +1610,9 @@ button:disabled {
   width: 100%;
   margin: 0;
   padding: 7px;
-
   border: 1px solid #decba9;
   border-radius: 16px;
   background: rgba(255, 252, 246, 0.8);
-
   box-shadow: 0 12px 35px rgba(89, 68, 47, 0.1);
 }
 
@@ -1889,7 +1678,6 @@ button:disabled {
    SLIDE 10 — CLOSING
    Romantic Ivory & Champagne Gold
 ========================================== */
-
 .slide:has(.closing-slide) {
   padding: 0;
   gap: 0;
@@ -1903,34 +1691,27 @@ button:disabled {
 .closing-slide {
   position: relative;
   isolation: isolate;
-
   width: 100%;
   height: 100%;
   min-height: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   padding: 70px 28px 35px;
-
   background-color: #f9f4ea;
   background-image: url("/images/closing_bg.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
   color: #59442f;
   text-align: center;
 }
 
 /* Konten utama */
-
 .closing-content {
   width: 100%;
   max-width: 420px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1947,7 +1728,6 @@ button:disabled {
 
 .closing-content h1 {
   margin: 0;
-
   color: #59442f;
   font-size: clamp(34px, 7vw, 48px);
   font-weight: normal;
@@ -1957,7 +1737,6 @@ button:disabled {
 .closing-message {
   max-width: 340px;
   margin: 0;
-
   color: #806a50;
   font-size: clamp(13px, 3.5vw, 15px);
   line-height: 1.8;
@@ -1965,14 +1744,12 @@ button:disabled {
 
 .closing-ornament {
   margin: 8px 0;
-
   color: #b68d4c;
   font-size: 23px;
 }
 
 .closing-signature-label {
   margin: 0;
-
   color: #927a5b;
   font-size: 13px;
   font-style: italic;
@@ -1980,7 +1757,6 @@ button:disabled {
 
 .closing-content h2 {
   margin: 0;
-
   color: #8e693a;
   font-size: clamp(28px, 6vw, 40px);
   font-weight: normal;
@@ -1988,27 +1764,22 @@ button:disabled {
 }
 
 /* Kredit pembuat website */
-
 .closing-credit {
   position: absolute;
   bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
-
   width: calc(100% - 80px);
   max-width: 300px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3px;
-
   padding: 0;
   background: none;
   border: none;
   border-radius: 0;
   box-shadow: none;
-
   color: #806444;
   font-family: system-ui, sans-serif;
   font-size: 10px;
@@ -2032,7 +1803,6 @@ button:disabled {
 }
 
 /* Smartphone */
-
 @media (max-width: 480px) {
   .closing-slide {
     padding: 80px 30px 105px;
@@ -2061,7 +1831,6 @@ button:disabled {
 }
 
 /* Smartphone dengan layar pendek */
-
 @media (max-height: 650px) {
   .closing-slide {
     padding-top: 48px;
