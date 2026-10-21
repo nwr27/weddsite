@@ -40,7 +40,7 @@ export const weddingData = {
     },
     {
       type: "GoPay",
-      logo: "/icon/gopay.png",
+      logo: "/icon/gopay.webp",
       number: "085163587727",
       name: "Nana Wartana",
     },
