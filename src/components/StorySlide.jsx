@@ -12,7 +12,7 @@ export default function StorySlide() {
           <img
             src="/images/our_story.png"
             alt="Ilustrasi perjalanan cinta Nana dan Meysa dari awal bertemu pada 2024 hingga persiapan pernikahan pada 2027"
-            loading="lazy"
+            loading="eager"
             decoding="async"
           />
         </figure>

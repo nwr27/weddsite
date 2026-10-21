@@ -1,0 +1,98 @@
+.wedding-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(29, 23, 20, 0.96);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  color: #f4e3c5;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 700ms ease, visibility 700ms ease;
+}
+.wedding-loader--exit {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.wedding-loader__content {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.wedding-loader__spinner {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 30px;
+}
+.wedding-loader__spinner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(216, 181, 116, 0.18);
+  border-top-color: #d8b574;
+  border-right-color: #d8b574;
+  border-radius: 50%;
+  animation: wedding-loader-spin 1.5s linear infinite;
+}
+.wedding-loader__spinner span {
+  font-family: Georgia, serif;
+  font-size: 19px;
+  color: #e8c88e;
+}
+.wedding-loader__eyebrow {
+  margin: 0 0 10px;
+  font-family: system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: #d8b574;
+}
+.wedding-loader__content h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 31px;
+  font-weight: normal;
+  color: #f4e3c5;
+}
+.wedding-loader__description {
+  margin: 12px 0 24px;
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  color: #bda78a;
+}
+.wedding-loader__progress {
+  width: 100%;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(216, 181, 116, 0.15);
+}
+.wedding-loader__progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #d8b574;
+  transition: width 250ms ease;
+}
+.wedding-loader__percentage {
+  margin-top: 12px;
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  color: #d8b574;
+}
+@keyframes wedding-loader-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wedding-loader__spinner::before { animation: none; }
+  .wedding-loader, .wedding-loader__progress-fill { transition: none; }
+}

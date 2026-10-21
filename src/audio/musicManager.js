@@ -35,6 +35,14 @@ class MusicManager {
     return audio;
   }
 
+  prepare() {
+    const audio = this.ensureAudio();
+    audio.preload = "auto";
+    if (audio.networkState === HTMLMediaElement.NETWORK_EMPTY) {
+      audio.load();
+    }
+  }
+
   subscribe(listener) {
     this.listeners.add(listener);
     listener(this.playing);

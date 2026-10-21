@@ -2,6 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 import SlideContent from "./components/SlideContent.jsx";
 import { musicManager } from "./audio/musicManager.js";
+import WeddingLoader from "./components/WeddingLoader.jsx";
+import { preloadImages } from "./utils/imagePreloader.js";
 
 const slides = [
   "opening",
@@ -16,10 +18,56 @@ const slides = [
   "closing",
 ];
 
+const PRIORITY_IMAGES = [
+  // Opening
+  "/images/bg-golden-langsat.webp",
+  "/decorations/kufi-bismillah.png",
+  "/decorations/portrait-frame.png",
+  "/decorations/heart-ampersand.png",
+  "/images/groom.jpg",
+  "/images/bride.jpg",
+
+  // Verse
+  "/decorations/arum-21-kufi.png",
+  "/decorations/gold-divider.png",
+
+  // Countdown
+  "/images/bg-countdown.webp",
+  "/decorations/countdown-frame.png",
+
+  // Event
+  "/images/bg-event-night.webp",
+
+  // Gallery
+  "/images/gallery-1.jpg",
+  "/images/gallery-2.jpg",
+  "/images/gallery-3.jpg",
+
+  // Guestbook
+  "/images/bg-guestbook.webp",
+
+  // Gift
+  "/icon/bca.png",
+  "/icon/seabank.png",
+  "/icon/dana.png",
+  "/icon/gopay.webp",
+
+  // Story
+  "/images/our_story.png",
+
+  // Closing
+  "/images/closing_bg.png",
+];
+
+
 export default function App() {
   const [index, setIndex] = useState(0);
   const [opened, setOpened] = useState(false);
   const [musicPlaying, setMusicPlaying] = useState(false);
+
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [loaderExiting, setLoaderExiting] = useState(false);
+  const [loaderVisible, setLoaderVisible] = useState(true);
 
   const touchStart = useRef(null);
   const lastWheel = useRef(0);
@@ -29,10 +77,56 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    musicManager.prepare();
+  }, []);
+
+  useEffect(() => {
     if (opened) {
       musicManager.onSlideChange(index);
     }
   }, [index, opened]);
+
+  useEffect(() => {
+    let active = true;
+    let finished = false;
+
+    const finishLoading = () => {
+      if (!active || finished) return;
+      finished = true;
+      setLoaderExiting(true);
+    };
+
+    const timeout = setTimeout(finishLoading, 20000);
+
+    preloadImages(PRIORITY_IMAGES, (progress) => {
+      if (active && !finished) {
+        setLoadingProgress(progress);
+      }
+    })
+      .then(() => {
+        if (!active) return;
+
+        clearTimeout(timeout);
+        finishLoading();
+      })
+      .catch(() => {
+        if (!active) return;
+
+        clearTimeout(timeout);
+        finishLoading();
+      });
+
+    return () => {
+      active = false;
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!loaderExiting) return;
+    const timer = setTimeout(() => setLoaderVisible(false), 700);
+    return () => clearTimeout(timer);
+  }, [loaderExiting]);
 
   const openInvitation = () => {
     // Dipanggil langsung dari klik agar Safari mengizinkan audio.
@@ -109,6 +203,9 @@ export default function App() {
 
   return (
     <main className="site">
+      {loaderVisible && (
+        <WeddingLoader progress={loadingProgress} exiting={loaderExiting} />
+      )}
       {!opened ? (
         <section className="welcome">
           <p>Undangan Pernikahan</p>

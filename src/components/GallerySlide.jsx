@@ -21,7 +21,7 @@ export default function GallerySlide() {
               className={`gallery-photo ${index === 0 ? "gallery-photo-main" : ""}`}
               key={photo.src}
             >
-              <img src={photo.src} alt={photo.alt} loading="lazy" />
+              <img src={photo.src} alt={photo.alt} loading="eager" decoding="async"  />
             </figure>
           ))}
         </div>
