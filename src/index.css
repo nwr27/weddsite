@@ -1529,6 +1529,82 @@ button:disabled {
 }
 
 /* ==========================================
+   SLIDE 8 — WEDDING GIFT
+   Dark Espresso & Champagne Gold
+========================================== */
+
+.gift-slide {
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      rgba(145, 106, 57, 0.16) 0%,
+      transparent 70%
+    ),
+    linear-gradient(
+      145deg,
+      #171310 0%,
+      #29211b 50%,
+      #120f0d 100%
+    );
+
+  color: #f1dfbe;
+}
+
+/* Heading */
+.gift-heading > span {
+  color: #d4af72;
+}
+
+.gift-heading h1 {
+  color: #f5e6ca;
+}
+
+.gift-heading p {
+  color: #c0aa8a;
+}
+
+/* Kartu rekening */
+.gift-card {
+  background: rgba(90, 77, 66, 0.94);
+  border: 1px solid rgba(212, 175, 114, 0.38);
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* Label */
+.gift-label,
+.gift-owner > span {
+  color: #bba17c;
+}
+
+/* Nomor rekening */
+.gift-number {
+  color: #f5e6ca;
+}
+
+/* Nama pemilik */
+.gift-owner strong {
+  color: #e6c99a;
+}
+
+/* Tombol salin */
+.gift-copy-button {
+  background: #c8a269;
+  color: #201811;
+}
+
+.gift-copy-button:focus-visible {
+  outline-color: #f5e6ca;
+}
+
+/* Kalimat penutup */
+.gift-closing {
+  color: #c0aa8a;
+}
+
+
+/* ==========================================
    WEDDING WISHES — CHAT SCROLL AREA
 ========================================== */
 .slide-body:has(.guestbook-slide) {

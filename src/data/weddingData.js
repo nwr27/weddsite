@@ -28,13 +28,13 @@ export const weddingData = {
   gifts: [
     {
       type: "BCA",
-      logo: "/icon/bca.png",
+      logo: "/icon/bca.webp",
       number: "4181388620",
       name: "Nana Wartana",
     },
     {
       type: "SeaBank",
-      logo: "/icon/seabank.png",
+      logo: "/icon/seabank.webp",
       number: "901932541941",
       name: "Meysa Dwi Wahyuni",
     },
@@ -46,7 +46,7 @@ export const weddingData = {
     },
     {
       type: "DANA",
-      logo: "/icon/dana.png",
+      logo: "/icon/dana.webp",
       number: "085603322554",
       name: "Meysa Dwi Wahyuni",
     },
